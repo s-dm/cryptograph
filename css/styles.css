@@ -1,0 +1,52 @@
+/*
+   statusbar-overlay sets the background color for the overlay. Black text is the default when the statusbar plugin is not added. When the
+   statusbar plugin is added, it also adds default setting to make the content white via:
+
+       <preference name="StatusBarStyle" value="lightcontent"/>
+
+   Setting the background color to black will allow the default light content (white text/icons) to show on it. The statusbar plugin is included
+   in the config.xml file and will be added by the CLI when you build locally.
+
+   See https://github.com/apache/cordova-plugin-statusbar
+*/
+
+.statusbar-overlay {
+    background: #000000;
+}
+.list-block {width:100% !important;margin:0 !important;}
+.loading-error {display:none !important;}
+ul#rec-list {min-height:200px;width: 90% !important;}
+#input-file {display:none;}
+#alert {display:none;}
+#banner {display:none;}
+#output-file {display:none;}
+.item-link {width:80%;}
+.list-block ul { overflow: scroll;
+    -webkit-overflow-scrolling: touch;}
+#operations {max-height: 140px;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+    top: 80px;
+    left: 0;
+    position: absolute}
+#recipe {width:100% !important;margin-top:140px;}
+#workspace-wrapper{width:100%;}
+#rec-list li {display: inline-block;
+    width: 90vw;
+    margin-left: -11.5%;
+    background: #fff;
+    padding: 5px;
+    margin-top: 2px
+    border-radius: 2px;
+    border: 1px solid #ccc;}
+#save {display:none;}
+#load {display:none;}
+#step {display:none;}
+#reset-layout {display:none;}
+#save-to-file {display:none;}
+#maximise-output {display:none;}
+.btn .btn-default {display:none;}
+.split-horizontal {width:100% !important;}
+.resizable {width:100%;min-height:200px;}
+.io-info {display:none;}
+#output-text {width:100%;min-height:200px;}

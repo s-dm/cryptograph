@@ -1,191 +1,478 @@
-
-<!doctype html>
-<html lang="en">
-  <head>
-
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+ 
+    <!-- Required meta tags-->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="manifest" href="manifest.json">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
 
-    <title>Modular online encoding, encryption and conversion tool — Cryptii</title>
+    <!-- Your app title -->
+    <title>My App</title>
 
-    <!-- favicon -->
-    <link rel="icon" sizes="16x16 32x32 48x48 64x64" type="image/x-icon" href="favicon.ico">
-    <link rel="icon" sizes="32x32" type="image/png" href="assets/favicon/favicon-32.png">
-    <link rel="apple-touch-icon-precomposed" href="assets/favicon/favicon-152.png">
-    <link rel="icon" sizes="57x57" href="assets/favicon/favicon-57.png">
-    <link rel="icon" sizes="76x76" href="assets/favicon/favicon-76.png">
-    <link rel="icon" sizes="96x96" href="assets/favicon/favicon-96.png">
-    <link rel="icon" sizes="120x120" href="assets/favicon/favicon-120.png">
-    <link rel="icon" sizes="128x128" href="assets/favicon/favicon-128.png">
-    <link rel="icon" sizes="167x167" href="assets/favicon/favicon-167.png">
-    <link rel="icon" sizes="180x180" href="assets/favicon/favicon-180.png">
-    <link rel="shortcut icon" sizes="196x196" href="assets/favicon/favicon-196.png">
-    <link rel="icon" sizes="228x228" href="assets/favicon/favicon-228.png">
-    <link rel="mask-icon" href="assets/favicon/favicon-mask.svg" color="#00b1d1">
-    <meta name="msapplication-square70x70logo" content="/assets/favicon/tile-70.png">
-    <meta name="msapplication-square150x150logo" content="/assets/favicon/tile-150.png">
-    <meta name="msapplication-wide310x150logo" content="/assets/favicon/tile-310x150.png">
-    <meta name="msapplication-square310x310logo" content="/assets/favicon/tile-310.png">
-    <meta name="msapplication-starturl" content="/">
+    <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
+        http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
+     -->
 
-    <!-- style -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500%7CSource+Code+Pro:400&subset=latin-ext">
-    <link rel="stylesheet" href="dist/style/cryptii-v=737c27e.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
 
-    <!-- preload -->
-    <link rel="dns-prefetch" href="https://srv.carbonads.net/">
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="application/javascript">
+        "use strict";
 
-    <!-- meta -->
-    <meta name="canonical" content="https://cryptii.com/">
-    <meta name="description" content="Web app that encodes, decodes, encrypts, decrypts, converts, translates, simulates and views content online offering a variety of ciphers, formats, algorithms and methods.">
-    <meta name="keywords" content="encoding, encryption, conversion, tool, web app, software">
-    <meta name="apple-mobile-web-app-title" content="Cryptii">
-    <meta name="google-site-verification" content="Jfbz9jggUVBHhac7FYoMuz-Ce5IsSvhobcewFNfsZtY">
+        // Load theme before the preloader is shown
+        try {
+            document.querySelector(":root").className = (JSON.parse(localStorage.getItem("options")) || {}).theme;
+        } catch (err) {
+            // LocalStorage access is denied by security settings
+        }
 
-    <!-- micro data -->
-    <meta property="og:title" content="Modular online encoding, encryption and conversion tool">
-    <meta property="og:description" content="Web app that encodes, decodes, encrypts, decrypts, converts, translates, simulates and views content online offering a variety of ciphers, formats, algorithms and methods.">
-    <meta property="og:site_name" content="Cryptii">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://cryptii.com/">
-    <meta property="og:image" content="https://cryptii.com/assets/image/preview/generic.png">
-    <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+        // Define loading messages
+        var loadingMsgs = [
+            "Proving P = NP...",
+            "Computing 6 x 9...",
+            "Mining bitcoin...",
+            "Dividing by 0...",
+            "Initialising Skynet...",
+            "[REDACTED]",
+            "Downloading more RAM...",
+            "Ordering 1s and 0s...",
+            "Navigating neural network...",
+            "Importing machine learning...",
+            "Issuing Alice and Bob one-time pads...",
+            "Mining bitcoin cash...",
+            "Generating key material by trying to escape vim...",
+            "for i in range(additional): Pylon()",
+            "(creating unresolved tension...",
+            "Symlinking emacs and vim to ed...",
+            "Training branch predictor...",
+            "Timing cache hits...",
+            "Speculatively executing recipes..."
+        ];
 
-    <meta property="fb:app_id" content="127936877936238">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@cryptii">
+        // Shuffle array using Durstenfeld algorithm
+        for (let i = loadingMsgs.length - 1; i > 0; --i) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = loadingMsgs[i];
+            loadingMsgs[i] = loadingMsgs[j];
+            loadingMsgs[j] = temp;
+        }
 
-    <script type="application/ld+json">
-      {
-        "@context": "http://schema.org",
-        "@type": ["WebApplication", "WebSite"],
-        "url": "https://cryptii.com",
-        "name": "Cryptii",
-        "description": "Web app that encodes, decodes, encrypts, decrypts, converts, translates, simulates and views content online offering a variety of ciphers, formats, algorithms and methods.",
-        "license": "https://github.com/cryptii/cryptii/blob/dev/LICENSE.md",
-        "applicationCategory": "Utility, Cryptography",
-        "softwareVersion": "4.0.0-alpha",
-        "author": {
-          "@type": "Person",
-          "url": "https://fraenz.frieder.es"
-        },
-        "sameAs": [
-          "https://twitter.com/cryptii",
-          "https://github.com/cryptii"
-        ]
-      }
+        // Show next loading message and move it to the end of the array
+        function changeLoadingMsg() {
+            var msg = loadingMsgs.shift();
+            loadingMsgs.push(msg);
+            try {
+                var el = document.getElementById("preloader-msg");
+                if (!el.classList.contains("loading"))
+                    el.classList.add("loading"); // Causes CSS transition on first message
+                el.innerHTML = msg;
+            } catch (err) {} // Ignore errors if DOM not yet ready
+        }
+
+        changeLoadingMsg();
+        window.loadingMsgsInt = setInterval(changeLoadingMsg, (Math.random() * 2000) + 1500);
+
+        // If any errors are thrown during loading, handle them here
+        function loadingErrorHandler(e) {
+            function escapeHtml(str) {
+                var HTML_CHARS = {
+                    "&": "&amp;",
+                    "<": "&lt;",
+                    ">": "&gt;",
+                    '"': "&quot;",
+                    "'": "&#x27;", // &apos; not recommended because it's not in the HTML spec
+                    "/": "&#x2F;", // forward slash is included as it helps end an HTML entity
+                    "`": "&#x60;"
+                };
+
+                return str.replace(/[&<>"'/`]/g, function(match) {
+                    return HTML_CHARS[match];
+                });
+            }
+
+            var msg = e.message +
+                (e.filename ? "\nFilename: " + e.filename : "") +
+                (e.lineno ? "\nLine: " + e.lineno : "") +
+                (e.colno ? "\nColumn: " + e.colno : "") +
+                (e.error ? "\nError: " + e.error : "") +
+                "\nUser-Agent: " + navigator.userAgent +
+                "\nCyberChef version: 7.11.1";
+
+            clearInterval(window.loadingMsgsInt);
+            document.getElementById("preloader").remove();
+            document.getElementById("preloader-msg").remove();
+            document.getElementById("preloader-error").innerHTML =
+                "CyberChef encountered an error while loading.<br><br>" +
+                "The following browser versions are supported:" +
+                "<ul><li>Google Chrome 40+</li><li>Mozilla Firefox 35+</li><li>Microsoft Edge 14+</li></ul>" +
+                "Your user agent is:<br>" + escapeHtml(navigator.userAgent) + "<br><br>" +
+                "If your browser is supported, please <a href='https://github.com/gchq/CyberChef/issues/new'>" +
+                "raise an issue</a> including the following details:<br><br>" +
+                "<pre>" + escapeHtml(msg) + "</pre>";
+        };
+        window.addEventListener("error", loadingErrorHandler);
     </script>
+</head>
 
-  </head>
-  <body>
+<body>
+    <!-- Status bar overlay for full screen mode (PhoneGap) -->
+    <div class="statusbar-overlay"></div>
 
-    <div class="app">
-
-      <header class="app__header header">
-        <div class="header__inner">
-          <a class="header__brand" href="index.html">
-            Cryptii
-          </a>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal">
+        <div class="content-block">
+            <p>Left panel content goes here</p>
         </div>
-      </header>
-
-      <article class="app__pipe pipe">
-        <header class="pipe__header">
-          <div class="container">
-            <h1 class="pipe__title">Modular online encoding, encryption and conversion tool</h1>
-            <p class="pipe__description">
-              Web app that encodes, decodes, encrypts, decrypts, converts, translates, simulates and views content online offering a variety of ciphers, formats, algorithms and methods.              
-              <a class="btn-more" href="about.html" target="_blank" rel="noopener">
-                Read more
-              </a>
-              
-            </p>
-            <ul class="pipe__link-list link-list">
-              
-              <li class="link-list__item">
-                <a class="link-list__link" href="hmac.html" title="Online HMAC hash generator: HMAC-MD5, HMAC-SHA">
-                  HMAC Generator
-                </a>
-              </li>
-              
-              <li class="link-list__item">
-                <a class="link-list__link" href="decimal-text.html" title="Decimal to Text: Decode Unicode code points to text">
-                  Decimal to Text
-                </a>
-              </li>
-              
-              <li class="link-list__item">
-                <a class="link-list__link" href="z85-encoder.html" title="Encode ZeroMQ's Ascii85 variant Z85 online">
-                  ZeroMQ's Z85
-                </a>
-              </li>
-              
-              <li class="link-list__item">
-                <a class="link-list__link" href="vigenere-cipher.html" title="Vigenère cipher: Encrypt and decrypt online">
-                  Vigenère cipher
-                </a>
-              </li>
-              
-              <li class="link-list__item">
-                <a class="link-list__link" href="text-decimal.html" title="Text to Decimal: Convert text to Unicode code points">
-                  Text to Decimal
-                </a>
-              </li>
-              
-            </ul>
-          </div>
-        </header>
-        <div class="pipe__scrollable"></div>
-        <script class="pipe__data" type="application/json">
-          {"id":1,"slug":"index","shortTitle":"Home","title":"Modular online encoding, encryption and conversion tool","description":"Web app that encodes, decodes, encrypts, decrypts, converts, translates, simulates and views content online offering a variety of ciphers, formats, algorithms and methods.","keywords":"encoding, encryption, conversion, tool, web app, software","docUrl":"https:\/\/cryptii.com\/about","imageUrl":null,"bricks":[{"name":"text"},{"name":"enigma","settings":{"model":"M3","rotor1":"VI","rotor2":"I","rotor3":"III","position1":1,"position2":17,"position3":12,"reflector":"UKW-B","plugboard":"bq cr di ej kw mt os px uz gh"}},{"name":"text"}],"content":{"bucket":0,"string":"The quick brown fox jumps over 13 lazy dogs."},"featureId":1,"updateTime":1525006586,"createTime":1517577842,"feature":{"id":1,"copy":"Carbon Ads","disclamer":"ads via Carbon","url":"https:\/\/carbonads.net\/","visualUrl":null,"updateTime":"2018-02-14 22:40:37","createTime":"2018-02-14 22:40:27"}}
-        </script>
-      </article>
-
-      <footer class="app__footer footer">
-        <div class="container">
-          <div class="footer__inner">
-            <h2 class="footer__brand"><a href="index.html">Cryptii</a></h2>
-            <p class="footer__description">
-              Web app that encodes, decodes, encrypts, decrypts, converts, translates, simulates and
-              views content online offering a variety of ciphers, formats, algorithms and methods.
-              Built with love by <a href="https://fraenz.frieder.es/" target="_blank" rel="noopener">@ffraenz</a> in Berlin.
-              Code licensed <a href="https://github.com/cryptii/cryptii/blob/dev/LICENSE.md" target="_blank" rel="noopener">MIT</a>.
-            </p>
-            <ul class="footer__link-list link-list">
-              <li class="link-list__item">
-                <a class="link-list__link" href="about.html">
-                  About
-                </a>
-              </li>
-              <li class="link-list__item">
-                <a class="link-list__link" href="https://github.com/cryptii/cryptii" target="_blank" rel="noopener">
-                  GitHub
-                </a>
-              </li>
-              <li class="link-list__item">
-                <a class="link-list__link" href="https://twitter.com/ffraenz" target="_blank" rel="noopener">
-                  Twitter
-                </a>
-              </li>
-              <li class="link-list__item">
-                <a class="link-list__link" href="https://github.com/cryptii/cryptii/issues/new" target="_blank" rel="noopener">
-                  Report an issue
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </footer>
-
     </div>
 
-    
+    <!-- Views -->
+    <div class="views">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            <!-- Top Navbar-->
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+                    <div class="center sliding">Insomnia</div>
+                    <div class="right">
+                        <!--
+                          Right link contains only icon - additional "icon-only" class
+                          Additional "open-panel" class tells app to open panel when we click on this link
+                        -->
+                        <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+            <div class="pages navbar-through toolbar-through">
+                <!-- Page, "data-page" contains page name -->
+                <div data-page="index" class="page">
+                    <!-- Scrollable page content -->
+                    <form class="searchbar">
+                            <div class="searchbar-input">
+                                <input type="search" class="form-control " id="search" placeholder="Search">
+                                <a href="#" class="searchbar-clear"></a>
+                            </div>
+                            <a href="#" class="searchbar-cancel">Cancel</a>
+                        </form>
+                        
+                        <!-- Search Bar overlay-->
+                        <div class="searchbar-overlay"></div>
+                    <div class="page-content">
+                        <div class="content-block">
+                                <span id="edit-favourites" class="btn btn-default btn-sm"><img aria-hidden="true" src="images/favourite-16x16.png" alt="Star Icon"> Edit</span>
+   
+                                <div id="loader-wrapper">
+                                        <div id="preloader" class="loader"></div>
+                                        <div id="preloader-msg" class="loading-msg"></div>
+                                        <div id="preloader-error" class="loading-error"></div>
+                                    </div><span id="edit-favourites" class="btn btn-default btn-sm"><img aria-hidden="true" src="images/favourite-16x16.png" alt="Star Icon"> Edit</span>
+                                    <div id="alert" class="alert alert-danger"><button type="button" class="close" id="alert-close">&times;</button> <span id="alert-content"></span></div>
+                                  
+                                        <div id="banner">
+                                           <div class="col-md-4" style="text-align:center"><span id="notice"><script type="text/javascript">navigator.userAgent&&navigator.userAgent.match(/Trident/)&&(document.write("Internet Explorer is not supported, please use Firefox or Chrome instead"),alert("Internet Explorer is not supported, please use Firefox or Chrome instead"))</script><noscript>JavaScript is not enabled. Good luck.</noscript></span></div>
+                                            <div class="col-md-4" style="text-align:right;padding-right:0"><a href="index.html#" id="options">Options<img aria-hidden="true" src="images/settings-22x22.png" alt="Settings Icon"></a><a href="index.html#" id="support" data-toggle="modal" data-target="#support-modal">About / Support<img aria-hidden="true" src="images/help-22x22.png" alt="Question Mark Icon"></a></div>
+                                        </div>
+                                        
+                                            <div id="operations" class="split split-horizontal no-select list-block list-block-search searchbar-found">
+                                                
+                                               <ul id="search-results" class="op-list list-block list-block-search searchbar-found"></ul>
+                                                <div id="categories" class="panel-group no-select"></div>
+                                            </div>
+                                            <div id="recipe" class="split split-horizontal no-select">
+                                                <div class="title no-select">Recipe</div>
+                                               
+                                                <ul id="rec-list" class="list-area no-select"></ul>
+                                                
+                                                <div id="controls" class="no-select">
+                                                    
+                                                    <div id="operational-controls">
+                                                            
+                                                        <div id="bake-group">
+                                                                <div class="row">
+                                                                        <div class="col-50">
+                                                                                <button type="button" class="button button-big button-fill color-red" style="width:100%" id="clr-recipe"><img aria-hidden="true" src="images/clean-16x16.png" alt="Broom Icon"> Clear recipe</button>
+                                                                        </div>
+                                                                        <div class="col-50">
+                                                                                <button type="button" class="button button-big button-fill button-fill color-green" style="width:100%"id="bake"> <span>Bake!</span></button> 
+                                                                        </div>
+                                                                      
+                                                                      </div>  
+                                                                      <div class="row" style="margin-top:5px;">
+                                                                            <div class="col-50">
+                                                                                    <button type="button" class="button button-big button-fill color-red" style="width:100%" id="clr-breaks"><img aria-hidden="true" src="images/clean-16x16.png" alt="Broom Icon"> Clear breakpoints</button>
+                                                                            </div>
+                                                                            <div class="col-50">
+                                                                                    <button type="button" class="button button-big button-fill button-fill color-red" style="width:100%"id="clr-io"> <span>Clear I / O</span></button> 
+                                                                            </div>
 
-    <!-- application -->
-    <script async src="dist/script/cryptii-browser-v=737c27e.js"></script>
+                                                                      </div>
+                                                            
+                                                            <label class="btn btn-success btn-lg" id="auto-bake-label" for="auto-bake"><input type="checkbox" checked="checked" id="auto-bake"><div>Auto Bake</div></label></div>
+                                                        <div class="btn-group" style="padding-top:10px"><button type="button" class="btn btn-default" id="step"><img aria-hidden="true" src="images/step-16x16.png" alt="Footstep Icon"> Step through</button> 
+                                                            </div>
+                                                    </div>
+                                                    <div class="btn-group-vertical" id="extra-controls"><button type="button" class="btn btn-default" id="save"><img aria-hidden="true" src="images/save-16x16.png" alt="Save Icon"> Save recipe</button> 
+                                                        <button type="button" class="btn btn-default" id="load"><img aria-hidden="true" src="images/open_yellow-16x16.png" alt="Open Icon"> Load recipe</button> </div>
+                                               
+                                                </div>
+                                            </div>
+                                            <div class="split split-horizontal" id="IO">
+                                                <div id="input" class="split no-select">
+                                                    <div class="title no-select"><label for="input-text">Input</label>
+                                                        <div class="btn-group io-btn-group"> <button type="button" class="btn btn-default btn-sm" id="reset-layout"><img aria-hidden="true" src="images/layout-16x16.png" alt="Grid Icon"> Reset layout</button></div>
+                                                        <div class="io-info" id="input-info"></div>
+                                                        <div class="io-info" id="input-selection-info"></div>
+                                                    </div>
+                                                    <div class="textarea-wrapper no-select">
+                                                        <div id="input-highlighter" class="no-select"></div><textarea id="input-text" class="resizable" spellcheck="false"></textarea>
+                                                        <div id="input-file">
+                                                            <div class="file-overlay"></div>
+                                                            <div style="position:relative;height:100%">
+                                                                <div class="card"><img aria-hidden="true" src="images/file-128x128.png" alt="File icon">
+                                                                    <div class="card-body"><button type="button" class="close" id="input-file-close">&times;</button> Name: <span id="input-file-name"></span><br>Size: <span id="input-file-size"></span><br>Type: <span id="input-file-type"></span><br>Loaded: <span id="input-file-loaded"></span></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="output" class="split">
+                                                    <div class="title no-select"><label for="output-text">Output</label>
+                                                        <p class="buttons-row">
+                                                                <button type="button" class="button button-raised button-fill color-blue " id="copy-output" title="Copy output">Copy<img aria-hidden="true" style="display:none;"src="images/copy-16x16.png" alt="Copy Icon"> </button>
+                                                               
+                                                                <button type="button" class="button button-raised button-fill color-blue" id="switch" title="Move output to input">Move output<img aria-hidden="true" src="images/switch-16x16.png" style="display:none;"alt="Switch Icon"> </button>
+                                                               
+                                                                <button type="button" class="button button-raised button-fill color-blue" id="undo-switch" title="Undo move" disabled="disabled">Undo<img aria-hidden="true" style="display:none;"src="images/undo-16x16.png" alt="Undo Icon"> </button>
+                                                               
+                                                              </p>
+                                                               
+                                                             
+                                                        <div class="btn-group io-btn-group"><button style="display:none;" type="button" class="btn btn-default btn-sm" id="save-to-file" title="Save to file"><img aria-hidden="true" src="images/save_as-16x16.png" alt="Save Icon"> Save to file</button> <button style="display:none;" type="button" class="btn btn-default btn-sm" id="copy-output" title="Copy output"><img aria-hidden="true" src="images/copy-16x16.png" alt="Copy Icon"> Copy raw output</button> <button style="display:none;"  type="button" class="btn btn-default btn-sm" id="switch" title="Move output to input"><img aria-hidden="true" src="images/switch-16x16.png" alt="Switch Icon"> Move output to input</button> <button style="display:none;"  type="button" class="btn btn-default btn-sm" id="undo-switch" title="Undo move" disabled="disabled"><img aria-hidden="true" src="images/undo-16x16.png" alt="Undo Icon"> Undo</button> <button style="display:none;" type="button" class="btn btn-default btn-sm" id="maximise-output" title="Maximise"><img aria-hidden="true" src="images/maximise-16x16.png" alt="Maximise Icon"> Max</button></div>
+                                                        <div class="io-info" id="output-info"></div>
+                                                        <div class="io-info" id="output-selection-info"></div><span id="stale-indicator" title="The output is stale.&#10;The input or recipe has changed since this output was generated. Bake again to get the new value.">&#x1F551;</span></div>
+                                                    <div class="textarea-wrapper">
+                                                        <div id="output-highlighter" class="no-select"></div>
+                                                        <div id="output-html"></div><textarea id="output-text" spellcheck="false"></textarea> <img id="show-file-overlay" aria-hidden="true" src="images/file-32x32.png" alt="Show file overlay" title="Show file overlay">
+                                                        <div id="output-file">
+                                                            <div class="file-overlay"></div>
+                                                            <div style="position:relative;height:100%">
+                                                                <div class="card"><img aria-hidden="true" src="images/file-128x128.png" alt="File icon">
+                                                                    <div class="card-body">Size: <span id="output-file-size"></span><br><button id="output-file-download" type="button" class="btn btn-primary">Download</button>
+                                                                        <div class="input-group"><span class="input-group-btn"><button id="output-file-slice" type="button" class="btn btn-default" title="View slice">&#x1f50d;</button> </span><input type="number" class="form-control" id="output-file-slice-from" placeholder="From" value="0" step="1024" min="0">
+                                                                            <div class="input-group-addon">to</div><input type="number" class="form-control" id="output-file-slice-to" placeholder="To" value="2048" step="1024" min="0"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div id="output-loader">
+                                                            <div class="loader"></div>
+                                                            <div class="loading-msg"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal" id="save-modal" tabindex="-1" role="dialog">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header"><img aria-hidden="true" class="pull-right" src="images/save-22x22.png" alt="Save Icon">
+                                                    <h4 class="modal-title">Save recipe</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="form-group"><label for="save-text">Save your recipe to local storage or copy the following string to load later</label>
+                                                        <ul class="nav nav-tabs" role="tablist">
+                                                            <li role="presentation" class="active"><a href="index.html#chef-format" role="tab" data-toggle="tab">Chef format</a></li>
+                                                            <li role="presentation"><a href="index.html#clean-json" role="tab" data-toggle="tab">Clean JSON</a></li>
+                                                            <li role="presentation"><a href="index.html#compact-json" role="tab" data-toggle="tab">Compact JSON</a></li>
+                                                        </ul>
+                                                        <div class="tab-content" id="save-texts">
+                                                            <div role="tabpanel" class="tab-pane active" id="chef-format"><textarea class="form-control" id="save-text-chef" rows="5"></textarea></div>
+                                                            <div role="tabpanel" class="tab-pane" id="clean-json"><textarea class="form-control" id="save-text-clean" rows="5"></textarea></div>
+                                                            <div role="tabpanel" class="tab-pane" id="compact-json"><textarea class="form-control" id="save-text-compact" rows="5"></textarea></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group"><label for="save-name">Recipe name</label> <input type="text" class="form-control" id="save-name" placeholder="Recipe name"></div>
+                                                </div>
+                                                <div class="modal-footer" id="save-footer"><button type="button" class="btn btn-primary" id="save-button" data-dismiss="modal">Save</button> <button type="button" class="btn btn-default" data-dismiss="modal">Done</button></div>
+                                                <div class="modal-body">
+                                                    <div class="form-group" id="save-link-group"><label>Data link</label>
+                                                        <div class="save-link-options"><input type="checkbox" id="save-link-recipe-checkbox" checked="checked"> <label for="save-link-recipe-checkbox">Include recipe</label> <input type="checkbox" id="save-link-input-checkbox" checked="checked"> <label for="save-link-input-checkbox">Include input</label></div><br><a id="save-link" style="word-wrap:break-word"></a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal" id="load-modal" tabindex="-1" role="dialog">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header"><img aria-hidden="true" class="pull-right" src="images/open_yellow-24x24.png" alt="Open Icon">
+                                                    <h4 class="modal-title">Load recipe</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="form-group"><label for="load-name">Load your recipe from local storage by selecting its name from the drop-down</label> <select class="form-control" id="load-name"></select></div>
+                                                    <div class="form-group"><label for="load-text">Load your recipe by pasting it in the box below</label> <textarea class="form-control" id="load-text" rows="5"></textarea></div>
+                                                </div>
+                                                <div class="modal-footer"><button type="button" class="btn btn-primary" id="load-button" data-dismiss="modal">Load</button> <button type="button" class="btn btn-danger" id="load-delete-button">Delete</button> <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal" id="options-modal" tabindex="-1" role="dialog">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header"><img aria-hidden="true" class="pull-right" src="images/settings-22x22.png" alt="Settings Icon">
+                                                    <h4 class="modal-title">Options</h4>
+                                                </div>
+                                                <div class="modal-body" id="options-body">
+                                                    <p style="font-weight:700">Please note that these options will persist between sessions.</p>
+                                                    <div class="option-item"><select option="theme" id="theme"><option value="classic">Classic</option><option value="dark">Dark</option><option value="geocities">GeoCities</option></select> <label for="theme">Theme (only supported in modern browsers)</label></div>
+                                                    <div class="option-item"><input type="checkbox" option="updateUrl" id="updateUrl" checked="checked"> <label for="updateUrl">Update the URL when the input or recipe changes</label></div>
+                                                    <div class="option-item"><input type="checkbox" option="showHighlighter" id="showHighlighter" checked="checked"> <label for="showHighlighter">Highlight selected bytes in output and input (when possible)</label></div>
+                                                    <div class="option-item"><input type="checkbox" option="treatAsUtf8" id="treatAsUtf8" checked="checked"> <label for="treatAsUtf8">Treat output as UTF-8 if possible</label></div>
+                                                    <div class="option-item"><input type="checkbox" option="wordWrap" id="wordWrap" checked="checked"> <label for="wordWrap">Word wrap the input and output</label></div>
+                                                    <div class="option-item"><input type="checkbox" option="showErrors" id="showErrors" checked="checked"> <label for="showErrors">Operation error reporting (recommended)</label></div>
+                                                    <div class="option-item"><input type="checkbox" option="useMetaKey" id="useMetaKey"> <label for="useMetaKey">Use meta key for keybindings (Windows ⊞/Command ⌘)</label></div>
+                                                    <div class="option-item"><input type="number" option="errorTimeout" id="errorTimeout"> <label for="errorTimeout">Operation error timeout in ms (0 for never)</label></div>
+                                                    <div class="option-item"><input type="number" option="ioDisplayThreshold" id="ioDisplayThreshold"> <label for="ioDisplayThreshold">Size threshold for treating the input and output as a file (KiB)</label></div>
+                                                    <div class="option-item"><select option="logLevel" id="logLevel"><option value="silent">Silent</option><option value="error">Error</option><option value="warn">Warn</option><option value="info">Info</option><option value="debug">Debug</option><option value="trace">Trace</option></select> <label for="logLevel">Console logging level</label></div>
+                                                </div>
+                                                <div class="modal-footer"><button type="button" class="btn btn-default" id="reset-options">Reset options to default</button> <button type="button" class="btn btn-default" data-dismiss="modal">Close</button></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal" id="favourites-modal" tabindex="-1" role="dialog">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header"><img aria-hidden="true" class="pull-right" src="images/favourite-24x24.png" alt="Star Icon">
+                                                    <h4 class="modal-title">Edit Favourites</h4>
+                                                </div>
+                                                <div class="modal-body" id="favourites-body">
+                                                    <ul>
+                                                        <li><span style="font-weight:700">To add:</span> drag the operation over the favourites category</li>
+                                                        <li><span style="font-weight:700">To reorder:</span> drag up and down in the list below</li>
+                                                        <li><span style="font-weight:700">To remove:</span> hit the red cross or drag out of the list below</li>
+                                                    </ul><br>
+                                                    <ul id="edit-favourites-list" class="op-list"></ul>
+                                                    <div class="option-item"></div>
+                                                </div>
+                                                <div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal" id="reset-favourites">Reset favourites to default</button> <button type="button" class="btn btn-success" data-dismiss="modal" id="save-favourites">Save</button> <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal" id="support-modal" tabindex="-1" role="dialog">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header"><img aria-hidden="true" class="pull-right" src="images/help-22x22.png" alt="Question Mark Icon">
+                                                    <h4 class="modal-title">CyberChef - The Cyber Swiss Army Knife</h4>
+                                                </div>
+                                                <div class="modal-body"><img aria-hidden="true" class="about-img-left" src="images/cyberchef-128x128.png" alt="CyberChef Logo">
+                                                    <p class="subtext">Version 7.11.1<br>Compile time: 10/05/2018 15:37:53 UTC</p>
+                                                    <p>&copy; Crown Copyright 2016.</p>
+                                                    <p>Released under the Apache Licence, Version 2.0.</p>
+                                                    <p><a href="https://gitter.im/gchq/CyberChef"><img src="images/gitter-badge.svg"></a></p><br><br>
+                                                    <div>
+                                                        <ul class="nav nav-tabs" role="tablist">
+                                                            <li role="presentation" class="active"><a href="index.html#faqs" aria-controls="profile" role="tab" data-toggle="tab"><img aria-hidden="true" src="images/help-16x16.png" alt="Question Mark Icon"> FAQs</a></li>
+                                                            <li role="presentation"><a href="index.html#report-bug" aria-controls="messages" role="tab" data-toggle="tab"><img aria-hidden="true" src="images/bug-16x16.png" alt="Bug Icon"> Report a bug</a></li>
+                                                            <li role="presentation"><a href="index.html#about" aria-controls="messages" role="tab" data-toggle="tab"><img aria-hidden="true" src="images/speech-16x16.png" alt="Speech Balloon Icon"> About</a></li>
+                                                            <li role="presentation"><a href="index.html#keybindings" aria-controls="messages" role="tab" data-toggle="tab"><img aria-hidden="true" src="images/code-16x16.png" alt="List Icon"> Keybindings</a></li>
+                                                        </ul>
+                                                        <div class="tab-content">
+                                                            <div role="tabpanel" class="tab-pane active" id="faqs"><br>
+                                                                <blockquote><a data-toggle="collapse" data-target="#faq-examples">What sort of things can I do with CyberChef?</a></blockquote>
+                                                                <div class="collapse" id="faq-examples">
+                                                                    <p>There are around 200 operations in CyberChef allowing you to carry out simple and complex tasks easily. Here are some examples:</p>
+                                                                    <ul>
+                                                                        <li><a href="index.html#recipe=From_Base64('A-Za-z0-9+/=',true)&input=VTI4Z2JHOXVaeUJoYm1RZ2RHaGhibXR6SUdadmNpQmhiR3dnZEdobElHWnBjMmd1">Decode a Base64-encoded string</a></li>
+                                                                        <li><a href="index.html#recipe=Translate_DateTime_Format('Standard%20date%20and%20time','DD/MM/YYYY%20HH:mm:ss','UTC','dddd%20Do%20MMMM%20YYYY%20HH:mm:ss%20Z%20z','Australia/Queensland')&input=MTUvMDYvMjAxNSAyMDo0NTowMA">Convert a date and time to a different time zone</a></li>
+                                                                        <li><a href="index.html#recipe=Parse_IPv6_address()&input=MjAwMTowMDAwOjQxMzY6ZTM3ODo4MDAwOjYzYmY6M2ZmZjpmZGQy">Parse a Teredo IPv6 address</a></li>
+                                                                        <li><a href="index.html#recipe=From_Hexdump()Gunzip()&input=MDAwMDAwMDAgIDFmIDhiIDA4IDAwIDEyIGJjIGYzIDU3IDAwIGZmIDBkIGM3IGMxIDA5IDAwIDIwICB8Li4uLi6881cu/y7HwS4uIHwKMDAwMDAwMTAgIDA4IDA1IGQwIDU1IGZlIDA0IDJkIGQzIDA0IDFmIGNhIDhjIDQ0IDIxIDViIGZmICB8Li7QVf4uLdMuLsouRCFb/3wKMDAwMDAwMjAgIDYwIGM3IGQ3IDAzIDE2IGJlIDQwIDFmIDc4IDRhIDNmIDA5IDg5IDBiIDlhIDdkICB8YMfXLi6+QC54Sj8uLi4ufXwKMDAwMDAwMzAgIDRlIGM4IDRlIDZkIDA1IDFlIDAxIDhiIDRjIDI0IDAwIDAwIDAwICAgICAgICAgICB8TshObS4uLi5MJC4uLnw">Convert data from a hexdump, then decompress</a></li>
+                                                                        <li><a href="index.html#recipe=RC4(%7B'option':'UTF8','string':'secret'%7D,'Hex','Hex')Disassemble_x86('64','Full%20x86%20architecture',16,0,true,true)&input=MjFkZGQyNTQwMTYwZWU2NWZlMDc3NzEwM2YyYTM5ZmJlNWJjYjZhYTBhYWJkNDE0ZjkwYzZjYWY1MzEyNzU0YWY3NzRiNzZiM2JiY2QxOTNjYjNkZGZkYmM1YTI2NTMzYTY4NmI1OWI4ZmVkNGQzODBkNDc0NDIwMWFlYzIwNDA1MDcxMzhlMmZlMmIzOTUwNDQ2ZGIzMWQyYmM2MjliZTRkM2YyZWIwMDQzYzI5M2Q3YTVkMjk2MmMwMGZlNmRhMzAwNzJkOGM1YTZiNGZlN2Q4NTlhMDQwZWVhZjI5OTczMzYzMDJmNWEwZWMxOQ">Decrypt and disassemble shellcode</a></li>
+                                                                        <li><a href="index.html#recipe=Fork('%5C%5Cn','%5C%5Cn',false)From_UNIX_Timestamp('Seconds%20(s)')&input=OTc4MzQ2ODAwCjEwMTI2NTEyMDAKMTA0NjY5NjQwMAoxMDgxMDg3MjAwCjExMTUzMDUyMDAKMTE0OTYwOTYwMA">Display multiple timestamps as full dates</a></li>
+                                                                        <li><a href="index.html#recipe=Fork('%5C%5Cn','%5C%5Cn',false)Conditional_Jump('1',false,'base64',10)To_Hex('Space')Return()Label('base64')To_Base64('A-Za-z0-9+/=')&input=U29tZSBkYXRhIHdpdGggYSAxIGluIGl0ClNvbWUgZGF0YSB3aXRoIGEgMiBpbiBpdA">Carry out different operations on data of different types</a></li>
+                                                                        <li><a href="index.html#recipe=Register('key=(%5B%5C%5Cda-f%5D*)',true,false)Find_/_Replace(%7B'option':'Regex','string':'.*data=(.*)'%7D,'$1',true,false,true)RC4(%7B'option':'Hex','string':'$R0'%7D,'Hex','Latin1')&input=aHR0cDovL21hbHdhcmV6LmJpei9iZWFjb24ucGhwP2tleT0wZTkzMmE1YyZkYXRhPThkYjdkNWViZTM4NjYzYTU0ZWNiYjMzNGUzZGIxMQ">Use parts of the input as arguments to operations</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                                <blockquote><a data-toggle="collapse" data-target="#faq-load-files">Can I load input directly from files?</a></blockquote>
+                                                                <div class="collapse" id="faq-load-files">
+                                                                    <p>Yes! Just drag your file over the input box and drop it.</p>
+                                                                    <p>CyberChef can handle files up to around 500MB (depending on your browser), however some of the operations may take a very long time to run over this much data.</p>
+                                                                    <p>If the output is larger than a certain threshold (default 1MiB), it will be presented to you as a file available for download. Slices of the file can be viewed in the output if you need to inspect them.</p>
+                                                                </div>
+                                                                <blockquote><a data-toggle="collapse" data-target="#faq-fork">How do I run operation X over multiple inputs at once?</a></blockquote>
+                                                                <div class="collapse" id="faq-fork">
+                                                                    <p>Maybe you have 10 timestamps that you want to parse or 16 encoded strings that all have the same key.</p>
+                                                                    <p>The 'Fork' operation (found in the 'Flow control' category) splits up the input line by line and runs all subsequent operations on each line separately. Each output is then displayed on a separate line. These delimiters can be changed, so if your inputs are separated by commas, you can change the split delimiter to a comma instead.</p>
+                                                                    <p><a href="index.html#recipe=Fork('%5C%5Cn','%5C%5Cn',false)From_UNIX_Timestamp('Seconds%20(s)')&input=OTc4MzQ2ODAwCjEwMTI2NTEyMDAKMTA0NjY5NjQwMAoxMDgxMDg3MjAwCjExMTUzMDUyMDAKMTE0OTYwOTYwMA">Click here</a> for an example.</p>
+                                                                </div>
+                                                            </div>
+                                                            <div role="tabpanel" class="tab-pane" id="report-bug"><br>
+                                                                <p>If you find a bug in CyberChef, please raise an issue in our GitHub repository explaining it in as much detail as possible. Copy and include the following information if relevant.</p><br>
+                                                                <pre id="report-bug-info"></pre><br><a class="btn btn-primary" href="https://github.com/gchq/CyberChef/issues/new" role="button">Raise issue on GitHub</a></div>
+                                                            <div role="tabpanel" class="tab-pane" id="about" style="padding:20px">
+                                                                <h5><strong>What</strong></h5>
+                                                                <p>A simple, intuitive web app for analysing and decoding data without having to deal with complex tools or programming languages. CyberChef encourages both technical and non-technical people to explore data formats, encryption and compression.</p><br>
+                                                                <h5><strong>Why</strong></h5>
+                                                                <p>Digital data comes in all shapes, sizes and formats in the modern world – CyberChef helps to make sense of this data all on one easy-to-use platform.</p><br>
+                                                                <h5><strong>How</strong></h5>
+                                                                <p>The interface is designed with simplicity at its heart. Complex techniques are now as trivial as drag-and-drop. Simple functions can be combined to build up a "recipe", potentially resulting in complex analysis, which can be shared with other users and used with their input.</p>
+                                                                <p>For those comfortable writing code, CyberChef is a quick and efficient way to prototype solutions to a problem which can then be scripted once proven to work.</p><br>
+                                                                <h5><strong>Who</strong></h5>
+                                                                <p>It is expected that CyberChef will be useful for cybersecurity and antivirus companies. It should also appeal to the academic world and any individuals or companies involved in the analysis of digital data, be that software developers, analysts, mathematicians or casual puzzle solvers.</p><br>
+                                                                <h5><strong>Aim</strong></h5>
+                                                                <p>It is hoped that by releasing CyberChef through <a href="https://github.com/gchq/CyberChef">GitHub</a>, contributions can be added which can be rolled out into future versions of the tool.</p><br><br>
+                                                                <p>There are around 200 useful operations in CyberChef for anyone working on anything vaguely Internet-related, whether you just want to convert a timestamp to a different format, decompress gzipped data, create a SHA3 hash, or parse an X.509 certificate to find out who issued it.</p>
+                                                                <p>It’s the Cyber Swiss Army Knife.</p>
+                                                            </div>
+                                                            <div role="tabpanel" class="tab-pane" id="keybindings" style="padding:20px">
+                                                                <table class="table table-condensed table-bordered table-hover" id="keybList"></table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Close</button></div><a href="https://github.com/gchq/CyberChef"><img aria-hidden="true" style="position:absolute;top:0;right:0;border:0" src="images/fork_me.png" alt="Fork me on GitHub"></a></div>
+                                        </div>
+                                    </div>
+                                    <div class="modal" id="confirm-modal" tabindex="-1" role="dialog">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="confirm-title"></h4>
+                                                </div>
+                                                <div class="modal-body" id="confirm-body"></div>
+                                                <div class="modal-footer"><button type="button" class="btn btn-success" id="confirm-yes"><img aria-hidden="true" src="images/thumb_up-16x16.png" alt="Thumbs Up"> Yes</button> <button type="button" class="btn btn-danger" id="confirm-no" data-dismiss="modal"><img aria-hidden="true" src="images/thumb_down-16x16.png" alt="Thumbs Down"> No</button></div>
+                                            </div>
+                                        </div>
+                                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom Toolbar-->
+            
+        </div>
+    </div>
 
-  </body>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>>
+</body>
+
 </html>
