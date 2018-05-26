@@ -6,10 +6,11 @@
         id        = "com.phonegap.helloworld"
         version   = "1.0.0">
 
-    <name>Hello World</name>
+    <name>Insomnia Coder</name>
 
     <description>
-        Hello World sample application that responds to the deviceready event.
+             Encode & Decode hidden messages with our superior app. It is easy to use and you can encode and decode layered message
+   
     </description>
 
     <author href="http://phonegap.com" email="support@phonegap.com">
