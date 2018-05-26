@@ -33,5 +33,5 @@
     <plugin name="cordova-plugin-console" spec="~1.0.1" />
     <plugin name="cordova-plugin-statusbar" spec="~1.0.1" />
     <plugin name="cordova-plugin-inappbrowser" spec="~3.0.0" />
-    <gap:plugin name="phonegap-admob" source="npm"/>
+ <gap:plugin name="com.admob.plugin" version="3.0.0" source="plugins.cordova.io" />
 </widget>
