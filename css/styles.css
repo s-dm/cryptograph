@@ -52,3 +52,5 @@ ul#rec-list {min-height:200px;width: 90% !important;}
 #output-text {width:100%;min-height:200px;}
 .navbar .left {display:none;}
 .navbar, .subnavbar, .toolbar {background:#fff;}
+#show-file-overlay {display:none;}
+#stale-indicator {display:none;}
