@@ -20,7 +20,7 @@ ul#rec-list {min-height:200px;width: 90% !important;}
 #alert {display:none;}
 #banner {display:none;}
 #output-file {display:none;}
-.item-link {width:40%;}
+.item-link {width:50%;}
 .list-block ul { overflow: scroll;
     -webkit-overflow-scrolling: touch;background: #2196f3;color:#fff;}
 #operations {max-height: 140px;
@@ -33,12 +33,11 @@ ul#rec-list {min-height:200px;width: 90% !important;}
 #workspace-wrapper{width:100%;}
 #rec-list li {display: inline-block;
     width: 90vw;
-    margin-left: -11.5%;
+    margin-left: -12.5%;
     background: #fff;
     padding: 5px;
     margin-top: 2px
-    border-radius: 2px;
-    border: 1px solid #ccc;}
+}
 #save {display:none;}
 #load {display:none;}
 #step {display:none;}
@@ -56,9 +55,12 @@ ul#rec-list {min-height:200px;width: 90% !important;}
 #stale-indicator {display:none;}
 .navbar-fixed .page>.searchbar, .navbar-fixed>.searchbar, .navbar-through .page>.searchbar, .navbar-through>.searchbar {top:48px;}
 .category {display:inline-block;}
-.item-link {display:block;font-size:1.2em;padding:10px;text-align:left;margin-left:-30px;}
+#categories li {display:block;font-size:1.2em;padding:10px;text-align:left;margin-left:-30px;}
 .category-title {width: 100%;
     text-align: center;}
 #categories {max-height:250px;overflow:scroll;-webkit-overflow-scrolling: touch;position:absolute;top:-30px;}
 #edit-favourites {display:none;}
 a.category-title {font-weight:bold;font-size:1.2em;padding:10px;}
+.page-content {background:#f4f4f4;}
+.list-block .item-content {background: #2196f3;
+    margin-left: 30%;width:40%;}
