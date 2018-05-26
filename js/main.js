@@ -19676,8 +19676,8 @@
   a.prototype.addOperation = function(e) {
       this.opList.push(e)
   }, a.prototype.toHtml = function() {
-      for (var e = "cat" + this.name.replace(/[\s/-:_]/g, ""), t = "<div class='panel category'>        <a class='category-title' data-toggle='collapse'            data-parent='#categories' href='#" + e + "'>            " + this.name + "        </a>        <div id='" + e + "' class='panel-collapse collapse        " + (this.selected ? " in" : "") + "'><ul class='op-list'>", n = 0; n < this.opList.length; n++) t += this.opList[n].toStubHtml();
-      return t += "</ul></div></div>"
+      for (var e = "cat" + this.name.replace(/[\s/-:_]/g, ""), t = "<div class='accordion-list'><div class='accordion-item'>        <div class='category-title accordion-item-toggle' data-toggle='collapse'            data-parent='#categories' href='#" + e + "'>     <h3>       " + this.name + "        </h3></div>        <div id='" + e + "' class='panel-collapse collapse accordion-item-content       " + (this.selected ? " in" : "") + "'><ul class='op-list'>", n = 0; n < this.opList.length; n++) t += this.opList[n].toStubHtml();
+      return t += "</ul></div></div></div>"
   }, t.a = a
 }, function(e, t, n) {
   "use strict";

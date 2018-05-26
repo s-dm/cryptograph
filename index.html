@@ -24,7 +24,7 @@
     <link rel="apple-touch-startup-image" href="images/splash.png" />
 
     <!-- Your app title -->
-    <title>iCoder</title>
+    <title>Codex: by Insomnia</title>
 
     <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
         http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
@@ -122,7 +122,7 @@
             document.getElementById("preloader").remove();
             document.getElementById("preloader-msg").remove();
             document.getElementById("preloader-error").innerHTML =
-                "iCode encountered an error while loading.<br><br>" +
+                "The codex encountered an error while loading.<br><br>" +
                 "The following browser versions are supported:" +
                 "<ul><li>Google Chrome 40+</li><li>Mozilla Firefox 35+</li><li>Microsoft Edge 14+</li></ul>" +
                 "Your user agent is:<br>" + escapeHtml(navigator.userAgent) + "<br><br>" +
@@ -153,7 +153,7 @@
                 <div class="navbar-inner">
                       
                     <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                    <div class="center sliding">iCoder</div>
+                    <div class="center sliding">Codex: by Insomnia</div>
                     <div class="right">
                         <!--
                           Right link contains only icon - additional "icon-only" class
@@ -178,7 +178,7 @@
                         
                         <!-- Search Bar overlay-->
                         <div class="searchbar-overlay"></div>
-                    <div class="page-content ">
+                    <div class="page-content hide-toolbar-on-scroll">
                         <div class="content-block">
                             
                                 <span id="edit-favourites" class="btn btn-default btn-sm"><img aria-hidden="true" src="images/favourite-16x16.png" alt="Star Icon"> Edit</span>
@@ -198,7 +198,7 @@
                                             <div id="operations" class="split split-horizontal no-select list-block list-block-search searchbar-found">
                                                 
                                                <ul id="search-results" class="op-list list-block list-block-search searchbar-found"></ul>
-                                                <div id="categories" class="panel-group no-select"></div>
+                                                
                                             </div>
                                             <div id="recipe" class="split split-horizontal no-select">
                                                 <div class="title no-select">Recipe</div>
@@ -396,22 +396,24 @@
                     </div>
                 </div>
             </div>
-            <div class="toolbar tabbar" id="operational-controls">
+            <div class="toolbar tabbar" style="z-index:9998;"id="operational-controls">
                     <div class="toolbar-inner" id="bake-group">
-                        <a href="#" data-popup=".popup-about"  class="open-popup tab-link ">
-                            <i class="icon icon-info">About</i>
+                        <a href="#" data-popup=".popup-about"  class="open-popup link ">
+                            About
                             </a>
                            
-                                    <a href="#" data-popup=".popup-help"  class="open-popup tab-link ">
-                                        <i class="icon icon-info">Help</i>
+                                    <a href="#" data-popup=".popup-help"  class="open-popup link ">
+                                        Help
                                         </a>
-                                    
-                      
-                      <a href="http://ins0mnia.tk/blog/" class="tab-link  external">
-                            <i class="icon demo-icon-4">Blog</i>
+                                        <a href="http://ins0mnia.tk/" class="link  external">
+                                           <p>Insomnia</p> 
+                                        </a>
+                                        
+                      <a href="http://ins0mnia.tk/blog/" class="link  external">
+                            Blog
                         </a>
-                        <a href="http://ins0mnia.tk/" class="tab-link  external">
-                                <i class="icon demo-icon-4">Insomnia</i>
+                        <a href="#" data-popup=".popup-codelist"  class="open-popup link ">
+                            Codex
                             </a>
                     </div>
                 </div>
@@ -425,6 +427,12 @@
               <p style="top: 35px;position: absolute;color:#333;"><a style="color:#333;" href="#" class="close-popup">Close</a></p>
               <p>Insomnia Encoding & Decoding app is meant for you to use when you need to do encoding or decoding on the go</p>
             </div>
+          </div>
+          <div class="popup popup-codelist">
+            <div class="content-block">
+                    <h1 style="text-align: center;">Codex</h1>
+              <p style="top: 35px;position: absolute;color:#333;"><a style="color:#333;" href="#" class="close-popup">Close</a></p>
+              <div id="categories" class="panel-group no-select"></div> </div>
           </div>
 
 
