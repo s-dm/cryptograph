@@ -7,9 +7,7 @@
     <author email="insomniamail@protonmail.com" href="http://ins0mnia.tk">
        Insomnia
     </author>
-    <widget>
-        <icon src="images/icon.png" />
-        </widget>
+  
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
