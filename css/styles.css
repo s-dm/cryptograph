@@ -56,4 +56,6 @@ ul#rec-list {min-height:200px;width: 90% !important;}
 #stale-indicator {display:none;}
 .navbar-fixed .page>.searchbar, .navbar-fixed>.searchbar, .navbar-through .page>.searchbar, .navbar-through>.searchbar {top:48px;}
 .category {display:inline-block;}
-.item-link {display:inline-block;font-size:1.2em;padding:10px;}
+.item-link {display:inline-block;font-size:1.2em;padding:10px;text-align:center;}
+.category-title {width: 100%;
+    text-align: center;}
