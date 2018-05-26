@@ -20,7 +20,7 @@ ul#rec-list {min-height:200px;width: 90% !important;}
 #alert {display:none;}
 #banner {display:none;}
 #output-file {display:none;}
-.item-link {width:80%;}
+.item-link {width:70%;}
 .list-block ul { overflow: scroll;
     -webkit-overflow-scrolling: touch;background: #2196f3;color:#fff;}
 #operations {max-height: 140px;
@@ -56,6 +56,9 @@ ul#rec-list {min-height:200px;width: 90% !important;}
 #stale-indicator {display:none;}
 .navbar-fixed .page>.searchbar, .navbar-fixed>.searchbar, .navbar-through .page>.searchbar, .navbar-through>.searchbar {top:48px;}
 .category {display:inline-block;}
-.item-link {display:inline-block;font-size:1.2em;padding:10px;text-align:center;}
+.item-link {display:inline-block;font-size:1.2em;padding:10px;text-align:left;margin-left:-30px;}
 .category-title {width: 100%;
     text-align: center;}
+#categories {max-height:250px;overflow:scroll;-webkit-overflow-scrolling: touch;position:absolute;top:-30px;}
+#edit-favourites {display:none;}
+a.category-title {font-weight:bold;font-size:1.2em;padding:10px;}
