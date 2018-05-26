@@ -24,24 +24,3 @@ myApp.onPageInit('about', function (page) {
     // Do something here for "about" page
 
 })
-
-function onDeviceReady() {
-    document.removeEventListener('deviceready', onDeviceReady, false);
-    
-    // Set AdMobAds options:
-    admob.setOptions({
-      publisherId:          "ca-app-pub-9286697504300611~1342368073",  // Required
-      interstitialAdId:     "ca-app-pub-9286697504300611/3044007144",  // Optional
-      tappxIdiOS:           "/XXXXXXXXX/Pub-XXXX-iOS-IIII",            // Optional
-      tappxIdAndroid:       "/XXXXXXXXX/Pub-XXXX-Android-AAAA",        // Optional
-      tappxShare:           0.5                                        // Optional
-    });
-    
-    // Start showing banners (atomatic when autoShowBanner is set to true)
-    admob.createBannerView();
-    
-    // Request interstitial (will present automatically when autoShowInterstitial is set to true)
-    admob.requestInterstitialAd();
-  }
-  
-  document.addEventListener("deviceready", onDeviceReady, false);

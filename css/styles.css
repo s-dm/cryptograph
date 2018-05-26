@@ -55,7 +55,7 @@ ul#rec-list {min-height:200px;width: 90% !important;}
 #stale-indicator {display:none;}
 .navbar-fixed .page>.searchbar, .navbar-fixed>.searchbar, .navbar-through .page>.searchbar, .navbar-through>.searchbar {top:48px;}
 .category {display:inline-block;}
-#categories li {display:block;font-size:1.2em;padding:10px;text-align:left;margin-left:-30px;}
+#categories li {display:block;font-size:1.2em;padding:10px;text-align:left;margin-left:20%;}
 .category-title {width: 100%;
     text-align: center;}
 #categories {max-height:250px;overflow:scroll;-webkit-overflow-scrolling: touch;position:absolute;top:-30px;}
@@ -64,3 +64,4 @@ a.category-title {font-weight:bold;font-size:1.2em;padding:10px;}
 .page-content {background:#f4f4f4;}
 .list-block .item-content {background: #2196f3;
     margin-left: 30%;width:40%;}
+    .accordion-item {text-align:center;}
