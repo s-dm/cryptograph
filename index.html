@@ -196,7 +196,7 @@
                                         </div>
                                         
                                             <div id="operations" class="split split-horizontal no-select list-block list-block-search searchbar-found">
-                                                
+                                                <div id="" style="display:none;"class="panel-group no-select"></div>
                                                <ul id="search-results" class="op-list list-block list-block-search searchbar-found"></ul>
                                                 
                                             </div>
@@ -406,13 +406,13 @@
                                         Help
                                         </a>
                                         <a href="http://ins0mnia.tk/" class="link  external">
-                                           <p>Insomnia</p> 
+                                           <p style="font-weight:bolder">Insomnia</p> 
                                         </a>
                                         
                       <a href="http://ins0mnia.tk/blog/" class="link  external">
                             Blog
                         </a>
-                        <a href="#" data-popup=".popup-codelist"  class="open-popup link ">
+                        <a href="#" data-picker=".picker-1" class="open-picker link">
                             Codex
                             </a>
                     </div>
@@ -428,11 +428,20 @@
               <p>Insomnia Encoding & Decoding app is meant for you to use when you need to do encoding or decoding on the go</p>
             </div>
           </div>
-          <div class="popup popup-codelist">
-            <div class="content-block">
-                    <h1 style="text-align: center;">Codex</h1>
-              <p style="top: 35px;position: absolute;color:#333;"><a style="color:#333;" href="#" class="close-popup">Close</a></p>
-              <div id="categories" class="panel-group no-select"></div> </div>
+          <div class="picker-modal picker-1">
+            <div class="toolbar">
+              <div class="toolbar-inner">
+                <div class="left" style="color:#fff;margin-left:20px;">Codex</div>
+                <div class="right"><a href="#" class="close-picker" style="color:#fff;margin-right:20px;">Done</a></div>
+              </div>
+            </div>
+            <div class="picker-modal-inner">
+              <div class="content-block">
+                
+                <div id="categories" class="panel-group no-select"></div>
+                                               
+              </div>
+            </div>
           </div>
 
 
