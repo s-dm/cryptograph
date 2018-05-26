@@ -25,6 +25,20 @@ myApp.onPageInit('about', function (page) {
 
 })
 
+function onDeviceReady() {
+    document.removeEventListener('deviceready', onDeviceReady, false);
+
+    // Set AdMobAds options:
+    admob.setOptions({
+        publisherId:          "ca-app-pub-9286697504300611~1342368073",  // Required
+        interstitialAdId:     "ca-app-pub-9286697504300611/3044007144",  // Optional
+        tappxIdiOS:           "/XXXXXXXXX/Pub-XXXX-iOS-IIII",            // Optional
+        tappxIdAndroid:       "/XXXXXXXXX/Pub-XXXX-Android-AAAA",        // Optional
+        tappxShare:           0.5                                        // Optional
+    });
+}
+
+document.addEventListener("deviceready", onDeviceReady, false);
 
 
 
