@@ -22,14 +22,14 @@ ul#rec-list {min-height:200px;width: 90% !important;}
 #output-file {display:none;}
 .item-link {width:80%;}
 .list-block ul { overflow: scroll;
-    -webkit-overflow-scrolling: touch;}
+    -webkit-overflow-scrolling: touch;background: #2196f3;color:#fff;}
 #operations {max-height: 140px;
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
-    top: 80px;
+    top: 90px;
     left: 0;
-    position: absolute}
-#recipe {width:100% !important;margin-top:140px;}
+    position: fixed;z-index:999;}
+#recipe {width:100% !important;margin-top:140px;border-top: 1px solid #ccc;}
 #workspace-wrapper{width:100%;}
 #rec-list li {display: inline-block;
     width: 90vw;
@@ -46,11 +46,12 @@ ul#rec-list {min-height:200px;width: 90% !important;}
 #save-to-file {display:none;}
 #maximise-output {display:none;}
 .btn .btn-default {display:none;}
-.split-horizontal {width:100% !important;}
+.split-horizontal {width:100% !important;border-top: 1px solid #ccc;}
 .resizable {width:100%;min-height:200px;}
 .io-info {display:none;}
 #output-text {width:100%;min-height:200px;}
 .navbar .left {display:none;}
-.navbar, .subnavbar, .toolbar {background:#fff;}
+/*.navbar, .subnavbar, .toolbar {background:#fff;}*/
 #show-file-overlay {display:none;}
 #stale-indicator {display:none;}
+.navbar-fixed .page>.searchbar, .navbar-fixed>.searchbar, .navbar-through .page>.searchbar, .navbar-through>.searchbar {top:48px;}

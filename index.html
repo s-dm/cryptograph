@@ -24,7 +24,7 @@
     <link rel="apple-touch-startup-image" href="images/splash.png" />
 
     <!-- Your app title -->
-    <title>Insomnia Coder</title>
+    <title>iCoder</title>
 
     <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
         http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
@@ -36,10 +36,12 @@
                enable_page_level_ads: true
           });
      </script>
-    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
-    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
-
-    <link rel="stylesheet" href="css/styles.css">
+    <!--<link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">-->
+    <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/framework7/1.4.2/css/framework7.material.min.css" />
+ <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/framework7/1.4.2/css/framework7.material.colors.min.css" />
+    
+ <link rel="stylesheet" href="css/styles.css">
     <script type="application/javascript">
         "use strict";
 
@@ -114,24 +116,17 @@
                 });
             }
 
-            var msg = e.message +
-                (e.filename ? "\nFilename: " + e.filename : "") +
-                (e.lineno ? "\nLine: " + e.lineno : "") +
-                (e.colno ? "\nColumn: " + e.colno : "") +
-                (e.error ? "\nError: " + e.error : "") +
-                "\nUser-Agent: " + navigator.userAgent +
-                "\nCyberChef version: 7.11.1";
+            
 
             clearInterval(window.loadingMsgsInt);
             document.getElementById("preloader").remove();
             document.getElementById("preloader-msg").remove();
             document.getElementById("preloader-error").innerHTML =
-                "CyberChef encountered an error while loading.<br><br>" +
+                "iCode encountered an error while loading.<br><br>" +
                 "The following browser versions are supported:" +
                 "<ul><li>Google Chrome 40+</li><li>Mozilla Firefox 35+</li><li>Microsoft Edge 14+</li></ul>" +
                 "Your user agent is:<br>" + escapeHtml(navigator.userAgent) + "<br><br>" +
-                "If your browser is supported, please <a href='https://github.com/gchq/CyberChef/issues/new'>" +
-                "raise an issue</a> including the following details:<br><br>" +
+           
                 "<pre>" + escapeHtml(msg) + "</pre>";
         };
         window.addEventListener("error", loadingErrorHandler);
@@ -158,7 +153,7 @@
                 <div class="navbar-inner">
                       
                     <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                    <div class="center sliding">Insomnia</div>
+                    <div class="center sliding">iCoder</div>
                     <div class="right">
                         <!--
                           Right link contains only icon - additional "icon-only" class
@@ -175,7 +170,7 @@
                     <!-- Scrollable page content -->
                     <form class="searchbar navbar">
                             <div class="searchbar-input">
-                                <input type="search" class="form-control " id="search" placeholder="Search">
+                                <input type="search" class="form-control " id="search" placeholder="Search recipe">
                                 <a href="#" class="searchbar-clear"></a>
                             </div>
                             <a href="#" class="searchbar-cancel">Cancel</a>
@@ -183,7 +178,7 @@
                         
                         <!-- Search Bar overlay-->
                         <div class="searchbar-overlay"></div>
-                    <div class="page-content hide-bars-on-scroll hide-tabbar-on-scroll">
+                    <div class="page-content ">
                         <div class="content-block">
                             
                                 <span id="edit-favourites" class="btn btn-default btn-sm"><img aria-hidden="true" src="images/favourite-16x16.png" alt="Star Icon"> Edit</span>
@@ -477,6 +472,7 @@
     <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
     <script type="text/javascript" src="js/my-app.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    
 </body>
 
 </html>
