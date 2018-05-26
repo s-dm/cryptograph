@@ -25,20 +25,23 @@ myApp.onPageInit('about', function (page) {
 
 })
 
-admob.initAdmob("ca-app-pub-9286697504300611~1342368073","ca-app-pub-9286697504300611/3044007144");//admob id format ca-app-pub-xxxxxxxxxxxxxxxxxxx/xxxxxxxxxx
-
-document.addEventListener(admob.Event.onInterstitialReceive, onInterstitialReceive, false);//show in ad receive event fun need add receive listener
-admob.cacheInterstitial();// load admob Interstitial
-function onInterstitialReceive(message) {//show in ad receive event fun
-    admob.showInterstitial();
-}
-function onGameOver(){//call this fun to show when game over
-       admob.isInterstitialReady(function(isReady){
-           if(isReady){
-               admob.showInterstitial();
-           }
-       });
- }
-
-
-
+function onDeviceReady() {
+    document.removeEventListener('deviceready', onDeviceReady, false);
+    
+    // Set AdMobAds options:
+    admob.setOptions({
+      publisherId:          "ca-app-pub-9286697504300611~1342368073",  // Required
+      interstitialAdId:     "ca-app-pub-9286697504300611/3044007144",  // Optional
+      tappxIdiOS:           "/XXXXXXXXX/Pub-XXXX-iOS-IIII",            // Optional
+      tappxIdAndroid:       "/XXXXXXXXX/Pub-XXXX-Android-AAAA",        // Optional
+      tappxShare:           0.5                                        // Optional
+    });
+    
+    // Start showing banners (atomatic when autoShowBanner is set to true)
+    admob.createBannerView();
+    
+    // Request interstitial (will present automatically when autoShowInterstitial is set to true)
+    admob.requestInterstitialAd();
+  }
+  
+  document.addEventListener("deviceready", onDeviceReady, false);
