@@ -20,7 +20,7 @@ ul#rec-list {min-height:200px;width: 90% !important;}
 #alert {display:none;}
 #banner {display:none;}
 #output-file {display:none;}
-.item-link {width:50%;}
+.item-link {width:70%;}
 .list-block ul { overflow: scroll;
     -webkit-overflow-scrolling: touch;background: #2196f3;color:#fff;}
 #operations {max-height: 140px;
@@ -32,8 +32,8 @@ ul#rec-list {min-height:200px;width: 90% !important;}
 #recipe {width:100% !important;margin-top:140px;border-top: 1px solid #ccc;}
 #workspace-wrapper{width:100%;}
 #rec-list li {display: inline-block;
-    width: 90vw;
-    margin-left: -12.5%;
+    width: 80%;
+   margin-left:5%;
     background: #fff;
     padding: 5px;
     margin-top: 2px
@@ -55,13 +55,28 @@ ul#rec-list {min-height:200px;width: 90% !important;}
 #stale-indicator {display:none;}
 .navbar-fixed .page>.searchbar, .navbar-fixed>.searchbar, .navbar-through .page>.searchbar, .navbar-through>.searchbar {top:48px;}
 .category {display:inline-block;}
-#categories li {display:block;font-size:1.2em;padding:10px;text-align:left;margin-left:20%;}
-.category-title {width: 100%;
-    text-align: center;}
-#categories {max-height:250px;overflow:scroll;-webkit-overflow-scrolling: touch;position:absolute;top:-30px;}
+#categories li {display:block;font-size:1.2em;padding:10px;text-align:left;margin-left:10%;}
+.category-title {width: 100%; text-align: center;}
+#categories {max-height:250px;overflow:scroll;-webkit-overflow-scrolling: touch;position:absolute;top:-30px;width: 100%;
+    float: left;
+    margin-left: -20px;}
 #edit-favourites {display:none;}
 a.category-title {font-weight:bold;font-size:1.2em;padding:10px;}
 .page-content {background:#f4f4f4;}
-.list-block .item-content {background: #2196f3;
-    margin-left: 30%;width:40%;}
-    .accordion-item {text-align:center;}
+.list-block .item-content {background: #2196f3; margin-left: 16.5%;width:70%;}
+.accordion-item {text-align:center;}
+   
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)
+and (-webkit-min-device-pixel-ratio: 1)  { 
+    #rec-list li {margin-left:0;}
+
+}
+.collapse {display:none;}
+.collapse.in {display:block;}
+.picker-modal {background:#f4f4f4;}
+.content-block {width:100%;}
+.accordion-item a {color: #6d6d72;
+    margin: 35px 15px 10px;
+    line-height: 17px;}

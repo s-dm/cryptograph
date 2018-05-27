@@ -12643,7 +12643,7 @@
       return this.description && (t += " data-container='body' data-toggle='popover' data-placement='auto right'            data-content=\"" + this.description + "\" data-html='true' data-trigger='hover'"), t += "><div class 'item-inner'><div class='item-title'>" + this.name, e && (t += "</div></div>" ),  t += "</li>"
   }, i.prototype.toFullHtml = function() {
       for (var e = "<div class='arg-title'>" + this.name + "</div>", t = 0; t < this.ingList.length; t++) e += this.ingList[t].toHtml();
-      return e += "<div class='recip-icons'>        <div class='breakpoint' title='Set breakpoint' break='false'></div>        <div class='disable-icon recip-icon' title='Disable operation'            disabled='false'></div>", e += "</div>        <div class='clearfix'>&nbsp;</div>"
+      return e += "<div class='recip-icons'>        <div class='breakpoint' title='Set breakpoint' break='false'></div>        <div class='disable-icon recip-icon' title='Disable operation'            disabled='true'></div>", e += "</div>        <div class='clearfix'>&nbsp;</div>"
   }, i.prototype.highlightSearchString = function(e, t, n) {
       if (t >= 0 && (this.name = this.name.slice(0, t) + "<b><u>" + this.name.slice(t, t + e.length) + "</u></b>" + this.name.slice(t + e.length)), this.description && n >= 0) {
           for (var a = /<[^>]+>/g, r = void 0; r = a.exec(this.description);)
@@ -19676,7 +19676,7 @@
   a.prototype.addOperation = function(e) {
       this.opList.push(e)
   }, a.prototype.toHtml = function() {
-      for (var e = "cat" + this.name.replace(/[\s/-:_]/g, ""), t = "<div class='accordion-item'>        <a class='category-title'            data-parent='#categories' href='#" + e + "'>            " + this.name + "        </a>        <div id='" + e + "' class='panel-collapse collapse        " + (this.selected ? " in" : "") + "'><ul class='op-list'>", n = 0; n < this.opList.length; n++) t += this.opList[n].toStubHtml();
+      for (var e = "cat" + this.name.replace(/[\s/-:_]/g, ""), t = "<div class='accordion-item'>        <a class='category-title'  area-expanded='false' data-toggle='collapse'  data-parent='#categories' href='#" + e + "'>            " + this.name + "        </a>        <div id='" + e + "' area-expanded='false' class='panel-collapse collapse        " + (this.selected ? " in" : "") + "'><ul class='op-list'>", n = 0; n < this.opList.length; n++) t += this.opList[n].toStubHtml();
       return t += "</ul></div></div>"
   }, t.a = a
 }, function(e, t, n) {
