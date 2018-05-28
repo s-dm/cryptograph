@@ -18473,7 +18473,7 @@
           o = e.attachEvent && !e[n],
           s = ["", "-webkit-", "-moz-", "-o-"].filter(function(e) {
               var n = t.createElement("div");
-              return n.style.cssText = "width:" + e + "calc(9px)", !!n.style.length
+              
           }).shift() + "calc",
           c = function(e) {
               return "string" == typeof e || e instanceof String ? t.querySelector(e) : e
@@ -18613,7 +18613,7 @@
   }()
 }, function(e, t, n) {
   e.exports = function() {
-      return n(569)('/**\n * CyberChef - The Cyber Swiss Army Knife\n *\n * @copyright Crown Copyright 2017\n * @license Apache-2.0\n *\n *   Copyright 2017 Crown Copyright\n *\n * Licensed under the Apache License, Version 2.0 (the "License");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an "AS IS" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */!function(e){var r={};function n(t){if(r[t])return r[t].exports;var o=r[t]={i:t,l:!1,exports:{}};return e[t].call(o.exports,o,o.exports,n),o.l=!0,o.exports}n.m=e,n.c=r,n.d=function(e,r,t){n.o(e,r)||Object.defineProperty(e,r,{configurable:!1,enumerable:!0,get:t})},n.r=function(e){Object.defineProperty(e,"__esModule",{value:!0})},n.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(r,"a",r),r},n.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},n.p="",n(n.s=0)}([function(e,r){\n/**\n * Web Worker to load large amounts of data without locking up the UI.\n *\n * @author n1474335 [n1474335@gmail.com]\n * @copyright Crown Copyright 2017\n * @license Apache-2.0\n */\nself.addEventListener("message",function(e){var r=e.data;r.hasOwnProperty("file")&&self.loadFile(r.file)}),self.loadFile=function(e){var r=new FileReader,n=new Uint8Array(e.size),t=0,o=function(){if(t>=e.size)return self.postMessage({progress:100}),void self.postMessage({fileBuffer:n.buffer},[n.buffer]);self.postMessage({progress:Math.round(t/e.size*100)});var o=e.slice(t,t+10485760);r.readAsArrayBuffer(o)};r.onload=function(e){n.set(new Uint8Array(r.result),t),t+=10485760,o()},r.onerror=function(e){self.postMessage({error:r.error.message})},o()}}]);', null)
+      return n(569)('/**\n * Codex: by Insomnia \n *\n * @copyright Crown Copyright 2017\n * @license Apache-2.0\n *\n *   Copyright 2017 Crown Copyright\n *\n * Licensed under the Apache License, Version 2.0 (the "License");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an "AS IS" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */!function(e){var r={};function n(t){if(r[t])return r[t].exports;var o=r[t]={i:t,l:!1,exports:{}};return e[t].call(o.exports,o,o.exports,n),o.l=!0,o.exports}n.m=e,n.c=r,n.d=function(e,r,t){n.o(e,r)||Object.defineProperty(e,r,{configurable:!1,enumerable:!0,get:t})},n.r=function(e){Object.defineProperty(e,"__esModule",{value:!0})},n.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(r,"a",r),r},n.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},n.p="",n(n.s=0)}([function(e,r){\n/**\n * Web Worker to load large amounts of data without locking up the UI.\n *\n * @author n1474335 [n1474335@gmail.com]\n * @copyright Crown Copyright 2017\n * @license Apache-2.0\n */\nself.addEventListener("message",function(e){var r=e.data;r.hasOwnProperty("file")&&self.loadFile(r.file)}),self.loadFile=function(e){var r=new FileReader,n=new Uint8Array(e.size),t=0,o=function(){if(t>=e.size)return self.postMessage({progress:100}),void self.postMessage({fileBuffer:n.buffer},[n.buffer]);self.postMessage({progress:Math.round(t/e.size*100)});var o=e.slice(t,t+10485760);r.readAsArrayBuffer(o)};r.onload=function(e){n.set(new Uint8Array(r.result),t),t+=10485760,o()},r.onerror=function(e){self.postMessage({error:r.error.message})},o()}}]);', null)
   }
 }, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t, n) {
   "use strict";
@@ -20620,7 +20620,7 @@
       }, i.prototype.supportButtonClick = function(e) {
           e.preventDefault();
           var t = document.getElementById("report-bug-info"),
-              n = this.generateStateUrl(!0, !0, null, "https://gchq.github.io/CyberChef/");
+              n = this.generateStateUrl(!0, !0, null, "http://insomnia.tk/");
           t && (t.innerHTML = "* Version: 7.11.1" + ("undefined" == typeof INLINE ? "" : "s") + "\n* Compile time: 10/05/2018 15:37:53 UTC\n* User-Agent: \n" + navigator.userAgent + "\n* [Link to reproduce](" + n + ")\n\n")
       }, i.prototype.showStaleIndicator = function() {
           var e = document.getElementById("stale-indicator");
@@ -20950,7 +20950,7 @@
       }, d.prototype.stateChange = function(e) {
           this.autoBake();
           var t = this.getRecipeConfig(),
-              n = "CyberChef";
+              n = "Codex: by Insomnia";
           if (1 === t.length) n = t[0].op + " - " + n;
           else if (t.length > 1) {
               var a = t.map(function(e) {
