@@ -20631,7 +20631,7 @@
       }, i.prototype.toggleBakeButtonFunction = function(e) {
           var t = document.getElementById("bake"),
               n = t.querySelector("span");
-          e ? (n.innerText = "Cancel", t.classList.remove("btn-success"), t.classList.add("btn-danger")) : (n.innerText = "Bake!", t.classList.remove("btn-danger"), t.classList.add("btn-success"))
+          e ? (n.innerText = "Cancel", t.classList.remove("btn-success"), t.classList.add("btn-danger")) : (n.innerText = "Go!", t.classList.remove("btn-danger"), t.classList.add("btn-success"))
       }, t.a = i
   }).call(this, n(149))
 }, function(e, t, n) {
