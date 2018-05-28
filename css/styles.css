@@ -13,6 +13,7 @@
 .statusbar-overlay {
     background: #000000;
 }
+::-webkit-scrollbar {display:none;}        
 .list-block {width:100% !important;margin:0 !important;}
 .loading-error {display:none !important;}
 ul#rec-list {min-height:200px;width: 90% !important;}
