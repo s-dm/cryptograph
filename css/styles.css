@@ -10,9 +10,11 @@
    See https://github.com/apache/cordova-plugin-statusbar
 */
 
+
 .statusbar-overlay {
     background: #000000;
 }
+
 ::-webkit-scrollbar {display:none;}        
 .list-block {width:100% !important;margin:0 !important;}
 .loading-error {display:none !important;}
@@ -87,3 +89,4 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 .accordion-item a {color: #6d6d72;
     margin: 35px 15px 10px;
     line-height: 17px;}
+    @media (max-width: 360px) { body {zoom:0.65;} }
