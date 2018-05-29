@@ -52,6 +52,7 @@
  <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/framework7/1.4.2/css/framework7.material.colors.min.css" />
     
  <link rel="stylesheet" href="css/styles.css">
+ 
     <script type="application/javascript">
         "use strict";
 
@@ -143,7 +144,7 @@
     </script>
 </head>
 
-<body>
+<body class="no-ios-edges">
     <!-- Status bar overlay for full screen mode (PhoneGap) -->
     <div class="statusbar-overlay"></div>
 
@@ -185,6 +186,7 @@
                             </div>
                             <a href="#" class="searchbar-cancel">Cancel</a>
                         </form>
+                        
                         
                         <!-- Search Bar overlay-->
                         <div class="searchbar-overlay"></div>
@@ -300,6 +302,9 @@
                                                             <div class="loader"></div>
                                                             <div class="loading-msg"></div>
                                                         </div>
+                                                        <a href="#" data-popup=".popup-donate" class="open-popup link donate">
+                                                             Codex : by Insomnia - Buy us a coffee?   Copyright © 2018
+                                                                </a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -407,6 +412,7 @@
                     </div>
                 </div>
             </div>
+            
             <div class="toolbar tabbar" style="z-index:9998;"id="operational-controls">
                     <div class="toolbar-inner" id="bake-group">
                         <a href="#" data-popup=".popup-about"  class="open-popup link ">
@@ -419,6 +425,9 @@
                                         <a href="http://ins0mnia.tk/" class="link  external">
                                            <p style="font-weight:bolder">Insomnia</p> 
                                         </a>
+
+                                   
+                                           
                                         
                       <a href="http://ins0mnia.tk/blog/" class="link  external">
                             Blog
@@ -426,6 +435,7 @@
                         <a href="#" data-picker=".picker-1" class="open-picker link">
                             Codex
                             </a>
+                            
                     </div>
                 </div>
               
@@ -437,8 +447,28 @@
                     <h1 style="text-align: center;">About</h1>
               <p style="top: 35px;position: absolute;color:#333;"><a style="color:#333;" href="#" class="close-popup">Close</a></p>
               <p>Insomnia Encoding & Decoding app is meant for you to use when you need to do encoding or decoding on the go</p>
+              
             </div>
           </div>
+          <div class="popup popup-donate">
+                <div class="content-block">
+                        <div class="block block-strong">
+                        <h1 style="text-align: center;">Donate</h1>
+                  <p style="top: 35px;position: absolute;color:#333;"><a style="color:#333;" href="#" class="close-popup">Close</a></p>
+                  <div class="block">
+                        <p>Want to buy us a coffee? Help our cause? Well, we have setup some options for you. Visit one of the links below and help us out.  </p>
+                      </div>
+                  <div class="list links-list">
+                        <ul>
+                          <li>
+                  <script type='text/javascript' src='https://ko-fi.com/widgets/widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Us on Ko-fi', '#46b798', 'G2G2E5Q9');kofiwidget2.draw();</script>  
+                  </li>
+                  <li>
+                  <a href="https://www.patreon.com/teaminsomnia" class="link external" ><img style="width:172px;margin-top:10px;border-radius:4px;box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.2);" src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png"></a>
+                </li>
+                </ul></div>
+               </div>
+                </div></div></div>
           <div class="picker-modal picker-1">
             <div class="toolbar">
               <div class="toolbar-inner">

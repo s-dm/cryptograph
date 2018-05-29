@@ -73,15 +73,18 @@ ul#rec-list {min-height:200px;width: 90% !important;}
 a.category-title {font-weight:bold;font-size:1.2em;padding:10px;}
 .page-content {background:#f4f4f4;}
 .list-block .item-content {background: #2196f3; margin-left: 16.5%;width:70%;}
-.accordion-item {text-align:center;}
+.accordion-item {text-align:left;}
    
 @media only screen 
 and (min-device-width : 768px) 
 and (max-device-width : 1024px)
 and (-webkit-min-device-pixel-ratio: 1)  { 
     #rec-list li {margin-left:0;}
+    ul#rec-list {min-height:380px;}
 
 }
+
+
 .collapse {display:none;}
 .collapse.in {display:block;}
 .picker-modal {background:#f4f4f4;}
@@ -90,3 +93,9 @@ and (-webkit-min-device-pixel-ratio: 1)  {
     margin: 35px 15px 10px;
     line-height: 17px;}
     @media (max-width: 360px) { body {zoom:0.65;} }
+    .donate {text-align: center;
+        color: #212121;
+        font-size: 1em;
+        font-weight: bolder;}
+        .block-strong a {display:inline-block;}
+        .links-list li {display:block;}
