@@ -18,7 +18,7 @@
 ::-webkit-scrollbar {display:none;}        
 .list-block {width:100% !important;margin:0 !important;}
 .loading-error {display:none !important;}
-ul#rec-list {min-height:200px;width: 90% !important;}
+ul#rec-list {min-height:400px;width: 90% !important;}
 #input-file {display:none;}
 #alert {display:none;}
 #banner {display:none;}
@@ -32,7 +32,7 @@ ul#rec-list {min-height:200px;width: 90% !important;}
     top: 90px;
     left: 0;
     position: fixed;z-index:999;}
-    .row .col-100  {margin-top:140px;border-top: 1px solid #ccc;}
+    .row .col-100  {margin-top:0px;border-top: 0px solid #ccc;}
     @media (min-width: 1281px) {
   
         .row .tablet-40  {margin-top:0;}
@@ -41,8 +41,8 @@ ul#rec-list {min-height:200px;width: 90% !important;}
 
 #workspace-wrapper{width:100%;}
 #rec-list li {display: inline-block;
-    width: 80%;
-   margin-left:5%;
+    width: 100%;
+   margin-left:-10%;
     background: #fff;
     padding: 5px;
     margin-top: 2px
@@ -54,7 +54,7 @@ ul#rec-list {min-height:200px;width: 90% !important;}
 #save-to-file {display:none;}
 #maximise-output {display:none;}
 .btn .btn-default {display:none;}
-.split-horizontal {border-top: 1px solid #ccc;}
+.split-horizontal {border-top: 0px solid #ccc;}
 .resizable {width:100%;min-height:200px;}
 .io-info {display:none;}
 #output-text {width:100%;min-height:200px;}
@@ -99,3 +99,8 @@ and (-webkit-min-device-pixel-ratio: 1)  {
         font-weight: bolder;}
         .block-strong a {display:inline-block;}
         .links-list li {display:block;}
+img.Broom.Icon {display:none;}
+select {border:0px !important;background-color:#fff;width:80%;margin-left:10%;}
+.card-footer {margin-top:20px;}
+.arg-input {width:85%;margin-left:10px;}
+
