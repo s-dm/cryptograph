@@ -26,12 +26,13 @@ ul#rec-list {min-height:400px;width: 90% !important;}
 .item-link {width:70%;}
 .list-block ul { overflow: scroll;
     -webkit-overflow-scrolling: touch;background: #2196f3;color:#fff;}
-#operations {max-height: 185px;
+#operations {max-height: 140px;
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
     top: 90px;
     left: 0;
     position: fixed;z-index:999;}
+<<<<<<< HEAD
     .row .col-100  {margin-top:0px;border-top: 0px solid #ccc;}
     @media (min-width: 1281px) {
   
@@ -39,6 +40,9 @@ ul#rec-list {min-height:400px;width: 90% !important;}
         .row .tablet-60  {margin-top:0;}
       }
 
+=======
+#recipe {border-top: 1px solid #ccc;}
+>>>>>>> parent of 3ca617d... 0.5.4
 #workspace-wrapper{width:100%;}
 #rec-list li {display: inline-block;
     width: 100%;
