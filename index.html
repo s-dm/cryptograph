@@ -13,7 +13,7 @@
  
     <!-- Required meta tags-->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     
@@ -52,6 +52,7 @@
  <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/framework7/1.4.2/css/framework7.material.colors.min.css" />
     
  <link rel="stylesheet" href="css/styles.css">
+ 
     <script type="application/javascript">
         "use strict";
 
@@ -141,9 +142,10 @@
         };
         window.addEventListener("error", loadingErrorHandler);
     </script>
+    
 </head>
 
-<body>
+<body class="no-ios-edges">
     <!-- Status bar overlay for full screen mode (PhoneGap) -->
     <div class="statusbar-overlay"></div>
 
@@ -180,11 +182,12 @@
                     <!-- Scrollable page content -->
                     <form class="searchbar navbar">
                             <div class="searchbar-input">
-                                <input type="search"  id="search" placeholder="Search recipe">
+                                <input type="search" class="form-control " id="search" placeholder="Search recipe">
                                 <a href="#" class="searchbar-clear"></a>
                             </div>
                             <a href="#" class="searchbar-cancel">Cancel</a>
                         </form>
+                        
                         
                         <!-- Search Bar overlay-->
                         <div class="searchbar-overlay"></div>
@@ -210,12 +213,7 @@
                                                <ul id="search-results" class="op-list list-block list-block-search searchbar-found"></ul>
                                                 
                                             </div>
-<<<<<<< HEAD
-                                            
                                             <div id="recipe" class="split col-100 tablet-40 desktop-40 split-horizontal no-select">
-=======
-                                            <div id="recipe" class="split col-100 tablet-40 split-horizontal no-select">
->>>>>>> parent of 3ca617d... 0.5.4
                                                 <div class="title no-select list-block cards-list">Recipe</div>
                                                
                                                 <ul id="rec-list" class="list-area no-select"></ul>
@@ -252,8 +250,11 @@
                                                         <button type="button" class="btn btn-default" id="load"><img aria-hidden="true" src="images/open_yellow-16x16.png" alt="Open Icon"> Load recipe</button> </div>
                                                
                                                 </div>
+                                                
                                             </div>
-                                            <div class="split split-horizontal col-100 tablet-60" id="IO">
+                                            
+                                            <div class="split split-horizontal col-100 tablet-60 desktop-60" id="IO">
+                                                    
                                                 <div id="input" class="split no-select">
                                                     <div class="title no-select"><label for="input-text">Input</label>
                                                         <div class="btn-group io-btn-group"> <button type="button" class="btn btn-default btn-sm" id="reset-layout"><img aria-hidden="true" src="images/layout-16x16.png" alt="Grid Icon"> Reset layout</button></div>
@@ -305,6 +306,9 @@
                                                             <div class="loader"></div>
                                                             <div class="loading-msg"></div>
                                                         </div>
+                                                        <a href="#" data-popup=".popup-donate" class="open-popup link donate">
+                                                             Codex : by Insomnia - Buy us a coffee?   Copyright © 2018
+                                                                </a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -412,6 +416,7 @@
                     </div>
                 </div>
             </div>
+            
             <div class="toolbar tabbar" style="z-index:9998;"id="operational-controls">
                     <div class="toolbar-inner" id="bake-group">
                         <a href="#" data-popup=".popup-about"  class="open-popup link ">
@@ -424,13 +429,17 @@
                                         <a href="http://ins0mnia.tk/" class="link  external">
                                            <p style="font-weight:bolder">Insomnia</p> 
                                         </a>
+
+                                   
+                                           
                                         
                       <a href="http://ins0mnia.tk/blog/" class="link  external">
                             Blog
                         </a>
-                        <a href="#" data-picker=".picker-1" class="open-picker link">
+                        <a href="#" data-popup=".popup-codex"  class="open-popup link ">
                             Codex
                             </a>
+                            
                     </div>
                 </div>
               
@@ -442,8 +451,72 @@
                     <h1 style="text-align: center;">About</h1>
               <p style="top: 35px;position: absolute;color:#333;"><a style="color:#333;" href="#" class="close-popup">Close</a></p>
               <p>Insomnia Encoding & Decoding app is meant for you to use when you need to do encoding or decoding on the go</p>
+              
             </div>
           </div>
+          <div class="popup popup-codex" style="display: block;">
+                    <div class="view navbar-fixed" data-page="smart-select-checkbox-1528273673517"><div class="pages"> 
+                     <div data-page="smart-select-checkbox-1528273673517" data-select-name="codex" class="page smart-select-page  ">
+                     <div class="navbar ">
+                     <div class="navbar-inner"
+                     ><div class="left" style="display:block;">
+                     <a href="#" class="link close-popup">
+                     <i class="icon icon-back"></i>
+                     
+                     </a>
+                     </div>
+                     <div class="right sliding" ><a href="#" class="button button-small button-raised color-blue button-fill" id="add">Add to recipe</a>
+                    </div>
+                     </div>
+                     </div>
+                     
+                     <form class="searchbar searchbar-init " data-search-list=".smart-select-list-1528273673517" data-search-in=".item-title">
+                     <div class="searchbar-input">
+                     <input type="search" placeholder="Search codex" class="">
+                     <a href="#" class="searchbar-clear"></a>
+                     </div>
+                     <a href="#" class="searchbar-cancel" style="display: block; margin-right: 0px;"></a>
+                     </form>
+                     
+                     <div class="searchbar-overlay ">
+                     </div>    
+                     <div class="page-content">  
+                         <div class="list-block  smart-select-list-1528273673517 ">   
+                               
+                            <ul id="categories" class="op-list">
+                               
+                                   </ul>
+                                      </div> 
+                                       
+                                      </div> 
+                                    
+                                     </div>
+                                     
+                                    </div>
+                                </div>
+                            </div>
+              
+            </div>
+          </div>
+          <div class="popup popup-donate">
+                <div class="content-block">
+                        <div class="block block-strong">
+                        <h1 style="text-align: center;">Donate</h1>
+                  <p style="top: 35px;position: absolute;color:#333;"><a style="color:#333;" href="#" class="close-popup">Close</a></p>
+                  <div class="block">
+                        <p>Want to buy us a coffee? Help our cause? Well, we have setup some options for you. Visit one of the links below and help us out.  </p>
+                      </div>
+                  <div class="list links-list">
+                        <ul>
+                          <li>
+                  <script type='text/javascript' src='https://ko-fi.com/widgets/widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Us on Ko-fi', '#46b798', 'G2G2E5Q9');kofiwidget2.draw();</script>  
+                  </li>
+                  <li>
+                  <a href="https://www.patreon.com/teaminsomnia" class="link external" ><img style="width:172px;margin-top:10px;border-radius:4px;box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.2);" src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png"></a>
+                </li>
+                </ul></div>
+               </div>
+                </div></div></div>
           <div class="picker-modal picker-1">
             <div class="toolbar">
               <div class="toolbar-inner">
@@ -451,13 +524,7 @@
                 <div class="right"><a href="#" class="close-picker" style="color:#fff;margin-right:20px;">Done</a></div>
               </div>
             </div>
-            <div class="picker-modal-inner">
-              <div class="content-block">
-                
-                <div id="categories" class="panel-group no-select"></div>
-                                               
-              </div>
-            </div>
+           
           </div>
 
 
@@ -499,12 +566,14 @@
       </div>
  
 </div>         
-             
+  
 
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
-    <script type="text/javascript" src="js/my-app.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    
+    <script type="text/javascript" src="js/my-app.js"></script>
+  
     
 </body>
 

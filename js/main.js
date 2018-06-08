@@ -1,3 +1,4 @@
+
 /**
  * CyberChef - The Cyber Swiss Army Knife
  *
@@ -12570,11 +12571,11 @@
           t = e ? "" : "<div class='clearfix'>&nbsp;</div>",
           n = void 0,
           a = void 0;
-      switch (t += "<div class='card-content card-content-padding" + (e ? " inline-args" : "") + ("text" === this.type ? " arg-group-text" : "") + "'><p  for='" + this.id + "'>" + this.name + "</p><div class='clearfix'></div>", this.type) {
+      switch (t += "<div class='arg-group" + (e ? " inline-args" : "") + ("text" === this.type ? " arg-group-text" : "") + "'><label class='arg-label' for='" + this.id + "'>" + this.name + "</label>", this.type) {
           case "string":
           case "binaryString":
           case "byteArray":
-              t += "<div class='card-footer'><input type='text' id='" + this.id + "' class='arg arg-input' arg-name='" + this.name + "' value='" + this.value + "'" + (this.disabled ? " disabled='disabled'" : "") + (this.placeholder ? " placeholder='" + this.placeholder + "'" : "") + "></div>";
+              t += "<input type='text' id='" + this.id + "' class='arg arg-input' arg-name='" + this.name + "' value='" + this.value + "'" + (this.disabled ? " disabled='disabled'" : "") + (this.placeholder ? " placeholder='" + this.placeholder + "'" : "") + ">";
               break;
           case "shortString":
           case "binaryShortString":
@@ -12599,8 +12600,8 @@
               t += "</select>", this.manager.addDynamicListener("#" + this.id, "change", this.populateOptionChange, this);
               break;
           case "editableOption":
-              for (t += "<div class='editable-option'>", t += "<select class='editable-option-select  ' id='sel-" + this.id + "'" + (this.disabled ? " disabled='disabled'" : "") + ">", n = 0; n < this.value.length; n++) t += "<option value='" + this.value[n].value + "'>" + this.value[n].name + "</option>";
-              t += "</select>", t += "<div class='card-footer'><input class='arg arg-input editable-option-input' id='" + this.id + "'arg-name='" + this.name + "' value='" + this.value[0].value + "'" + (this.disabled ? " disabled='disabled'" : "") + (this.placeholder ? " placeholder='" + this.placeholder + "'" : "") + "></div>", t += "</div>", this.manager.addDynamicListener("#sel-" + this.id, "change", this.editableOptionChange, this);
+              for (t += "<div class='editable-option'>", t += "<select class='editable-option-select' id='sel-" + this.id + "'" + (this.disabled ? " disabled='disabled'" : "") + ">", n = 0; n < this.value.length; n++) t += "<option value='" + this.value[n].value + "'>" + this.value[n].name + "</option>";
+              t += "</select>", t += "<input class='arg arg-input editable-option-input' id='" + this.id + "'arg-name='" + this.name + "' value='" + this.value[0].value + "'" + (this.disabled ? " disabled='disabled'" : "") + (this.placeholder ? " placeholder='" + this.placeholder + "'" : "") + ">", t += "</div>", this.manager.addDynamicListener("#sel-" + this.id, "change", this.editableOptionChange, this);
               break;
           case "text":
               t += "<textarea id='" + this.id + "' class='arg' arg-name='" + this.name + "'" + (this.disabled ? " disabled='disabled'" : "") + (this.placeholder ? " placeholder='" + this.placeholder + "'" : "") + ">" + this.value + "</textarea>"
@@ -12638,15 +12639,9 @@
    * @param {App} app - The main view object for CyberChef.
    * @param {Manager} manager - The CyberChef event manager.
    */
-  i.INFO_ICON = "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAByElEQVR4XqVTzWoaYRQ9KZJmoVaS1J1QiYTIuOgqi9lEugguQhYhdGs3hTyAi0CWJTvJIks30ZBNsimUtlqkVLoQCuJsphRriyFjabWtEyf/Rv3iWcwwymTlgQuH851z5hu43wRGkEwmXwCIA4hiGAUAmUQikQbhEHwyGCWVSglVVUW73RYmyKnxjB56ncJ6NpsVxHGrI/ZLuniVb3DIqQmCHnrNkgcggNeSJPlisRgyJR2b737j/TcDsQUPwv6H5NR4BnroZcb6Z16N2PvyX6yna9Z8qp6JQ0Uf0ughmGHWBSAuyzJqrQ7eqKewY/dzE363C71e39LoWQq5wUwul4uzIBoIBHD01RgyrkZ8eDbvwUWnj623v2DHx4qB51IAzLIAXq8XP/7W0bUVVJtXWIk8wvlN364TA+/1IDMLwmWK/Hq3axmhaBdoGLeklm73ElaBYRgIzkyifHIOO4QQJKM3oJcZq6CgaVp0OTyHw9K/kQI4FiyHfdC0n2CWe5ApFosIPZ7C2tNpXpcDOehGyD/FIbd0euhlhllzFxRzC3fydbG4XRYbB9/tQ41n9m1U7l3lyp9LkfygiZeZCoecmtMqj/+Yxn7Od3v0j50qCO3zAAAAAElFTkSuQmCC", i.REMOVE_ICON = "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABwklEQVR42qRTPU8CQRB9K2CCMRJ6NTQajOUaqfxIbLCRghhjQixosLAgFNBQ3l8wsabxLxBJbCyVUBiMCVQEQkOEKBbCnefM3p4eohWXzM3uvHlv52b2hG3bmOWZw4yPn1/XQkCQ9wFxcgZZ0QLKpifpN8Z1n1L13griBBjHhYK0nMT4b+wom53ClAAFQacZJ/m8rNfrSOZy0vxJjPP6IJ2WzWYTO6mUwiwtILiJJSHUKVSWkchkZK1WQzQaxU2pVGUglkjIbreLUCiEx0qlStlFCpfPiPstYDtVKJH9ZFI2Gw1FGA6H6LTbCAaDeGu1FJl6UuYjpwTGzucokZW1NfnS66kyfT4fXns9RaZmlgNcuhZQU+jowLzuOK/HgwEW3E5ZlhLXVWKk11P3wNYNWw+HZdA0sUgx1zjGmD05nckx0ilGjBJdUq3fr7K5e8bGf43RdL7fOPSQb4lI8SLbrUfkUIuY32VTI1bJn5BqDnh4Dodt9ryPUDzyD7aquWoKQohl2i9sAbubwPkTcHkP3FHsg+yT+7sN7G0AF3Xg6sHB3onbdgWWKBDQg/BcTuVt51dQA/JrnIcyIu6rmPV3/hJgACPc0BMEYTg+AAAAAElFTkSuQmCC", i.prototype.toStubHtml = function(e) {
-<<<<<<< HEAD
-      var t = "<li draggable='false' class='item-content item-link draggable operation card' data-trigger='hover' "; 
-=======
-      var t = "<li draggable='false' class='item-content item-link smart-select operation card' data-trigger='hover' ";
->>>>>>> parent of 3fe398a... V.0.5.5 beta
-      return this.description && (t += " data-container='body' data-toggle='popover' data-placement='auto right'            data-content=\"" + this.description + "\" data-html='true' data-trigger='hover'"), t += "><div class 'item-inner'><div class='item-title'>" + this.name, e && (t += "</div></div>" ),  t += "</li>"
+  i.INFO_ICON = "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAByElEQVR4XqVTzWoaYRQ9KZJmoVaS1J1QiYTIuOgqi9lEugguQhYhdGs3hTyAi0CWJTvJIks30ZBNsimUtlqkVLoQCuJsphRriyFjabWtEyf/Rv3iWcwwymTlgQuH851z5hu43wRGkEwmXwCIA4hiGAUAmUQikQbhEHwyGCWVSglVVUW73RYmyKnxjB56ncJ6NpsVxHGrI/ZLuniVb3DIqQmCHnrNkgcggNeSJPlisRgyJR2b737j/TcDsQUPwv6H5NR4BnroZcb6Z16N2PvyX6yna9Z8qp6JQ0Uf0ughmGHWBSAuyzJqrQ7eqKewY/dzE363C71e39LoWQq5wUwul4uzIBoIBHD01RgyrkZ8eDbvwUWnj623v2DHx4qB51IAzLIAXq8XP/7W0bUVVJtXWIk8wvlN364TA+/1IDMLwmWK/Hq3axmhaBdoGLeklm73ElaBYRgIzkyifHIOO4QQJKM3oJcZq6CgaVp0OTyHw9K/kQI4FiyHfdC0n2CWe5ApFosIPZ7C2tNpXpcDOehGyD/FIbd0euhlhllzFxRzC3fydbG4XRYbB9/tQ41n9m1U7l3lyp9LkfygiZeZCoecmtMqj/+Yxn7Od3v0j50qCO3zAAAAAElFTkSuQmCC", i.REMOVE_ICON = "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABwklEQVR42qRTPU8CQRB9K2CCMRJ6NTQajOUaqfxIbLCRghhjQixosLAgFNBQ3l8wsabxLxBJbCyVUBiMCVQEQkOEKBbCnefM3p4eohWXzM3uvHlv52b2hG3bmOWZw4yPn1/XQkCQ9wFxcgZZ0QLKpifpN8Z1n1L13griBBjHhYK0nMT4b+wom53ClAAFQacZJ/m8rNfrSOZy0vxJjPP6IJ2WzWYTO6mUwiwtILiJJSHUKVSWkchkZK1WQzQaxU2pVGUglkjIbreLUCiEx0qlStlFCpfPiPstYDtVKJH9ZFI2Gw1FGA6H6LTbCAaDeGu1FJl6UuYjpwTGzucokZW1NfnS66kyfT4fXns9RaZmlgNcuhZQU+jowLzuOK/HgwEW3E5ZlhLXVWKk11P3wNYNWw+HZdA0sUgx1zjGmD05nckx0ilGjBJdUq3fr7K5e8bGf43RdL7fOPSQb4lI8SLbrUfkUIuY32VTI1bJn5BqDnh4Dodt9ryPUDzyD7aquWoKQohl2i9sAbubwPkTcHkP3FHsg+yT+7sN7G0AF3Xg6sHB3onbdgWWKBDQg/BcTuVt51dQA/JrnIcyIu6rmPV3/hJgACPc0BMEYTg+AAAAAElFTkSuQmCC", i.prototype.toStubHtml = function(e) { var t = "<li class='operation'";return this.description && (t += " data-container='body' data-toggle='popover-disabled' data-placement='auto right'            data-content=\"" + this.description + "\" data-html='true' data-original-title='' title='' draggable='false' data-trigger='hover'"), t += "> <label  class='label-checkbox item-content no-fastclick'><input   class='breakpoint' type='checkbox' ><div class='item-media'><i class='icon icon-form-checkbox'></i></div><div class 'item-inner'><div class='item-title arg-title'>" + this.name, e && (t += "</div></div>" ),  t += "</li>"
   }, i.prototype.toFullHtml = function() {
-      for (var e = "<div class='card-header'>" + this.name + "</div>", t = 0; t < this.ingList.length; t++) e += this.ingList[t].toHtml();
+      for (var e = "<div class='arg-title'>" + this.name + "</div>", t = 0; t < this.ingList.length; t++) e += this.ingList[t].toHtml();
       return e += "<div class='recip-icons'>        <div class='breakpoint' title='Set breakpoint' break='false'></div>        <div class='disable-icon recip-icon' title='Disable operation'            disabled='false'></div>", e += "</div>        <div class='clearfix'>&nbsp;</div>"
   }, i.prototype.highlightSearchString = function(e, t, n) {
       if (t >= 0 && (this.name = this.name.slice(0, t) + "<b><u>" + this.name.slice(t, t + e.length) + "</u></b>" + this.name.slice(t + e.length)), this.description && n >= 0) {
@@ -19680,8 +19675,8 @@
   a.prototype.addOperation = function(e) {
       this.opList.push(e)
   }, a.prototype.toHtml = function() {
-      for (var e = "cat" + this.name.replace(/[\s/-:_]/g, ""), t = "<div class='accordion-item'>        <a class='category-title'  area-expanded='true' data-toggle='collapse'  data-parent='#categories' href='#" + e + "'>            " + this.name + "        </a>        <div id='" + e + "' area-expanded='false' class='panel-collapse collapse        " + (this.selected ? " in" : "") + "'><ul class='op-list'>", n = 0; n < this.opList.length; n++) t += this.opList[n].toStubHtml();
-      return t += "</ul></div></div>"
+      for (var e = "cat" + this.name.replace(/[\s/-:_]/g, ""), t = "<li class='item-divider category-title " + (this.selected ? " in" : "") + "'  area-expanded='true' data-toggle='collapse'  data-parent='#categories' href='#" + e + "'>            " + this.name + "              ", n = 0; n < this.opList.length; n++) t += this.opList[n].toStubHtml();
+      return t += "</li>"
   }, t.a = a
 }, function(e, t, n) {
   "use strict";
@@ -19696,6 +19691,7 @@
    * @param {App} app - The main view object for CyberChef.
    * @param {Manager} manager - The CyberChef event manager.
    */
+  
   var a = function(e, t) {
       this.app = e, this.manager = t
   };
@@ -20402,7 +20398,7 @@
               var n = t.changedTouches[0],
                   a = document.elementFromPoint(n.clientX, n.clientY);
               this.removeIntent = !e.contains(a)
-          }.bind(this)), document.querySelector("#categories a").addEventListener("dragover", this.favDragover.bind(this)), document.querySelector("#categories a").addEventListener("dragleave", this.favDragleave.bind(this)), document.querySelector("#categories a").addEventListener("drop", this.favDrop.bind(this))
+          }.bind(this)), document.querySelector("#categories li").addEventListener("dragover", this.favDragover.bind(this)), document.querySelector("#categories li").addEventListener("dragleave", this.favDragleave.bind(this)), document.querySelector("#categories li").addEventListener("drop", this.favDrop.bind(this))
       }, c.prototype.createSortableSeedList = function(t) {
           o.a.create(t, {
               group: {
@@ -20425,7 +20421,7 @@
           if ("move" !== e.dataTransfer.effectAllowed) return !1;
           e.stopPropagation(), e.preventDefault(), e.target.className && e.target.className.indexOf("category-title") > -1 ? e.target.classList.add("favourites-hover") : e.target.parentNode.className && e.target.parentNode.className.indexOf("category-title") > -1 ? e.target.parentNode.classList.add("favourites-hover") : e.target.parentNode.parentNode.className && e.target.parentNode.parentNode.className.indexOf("category-title") > -1 && e.target.parentNode.parentNode.classList.add("favourites-hover")
       }, c.prototype.favDragleave = function(e) {
-          e.stopPropagation(), e.preventDefault(), document.querySelector("#categories a").classList.remove("favourites-hover")
+          e.stopPropagation(), e.preventDefault(), document.querySelector("#categories li").classList.remove("favourites-hover")
       }, c.prototype.favDrop = function(e) {
           e.stopPropagation(), e.preventDefault(), e.target.classList.remove("favourites-hover");
           var t = e.dataTransfer.getData("Text");
@@ -20635,7 +20631,7 @@
       }, i.prototype.toggleBakeButtonFunction = function(e) {
           var t = document.getElementById("bake"),
               n = t.querySelector("span");
-          e ? (n.innerText = "Cancel", t.classList.remove("btn-success"), t.classList.add("btn-danger")) : (n.innerText = "Bake!", t.classList.remove("btn-danger"), t.classList.add("btn-success"))
+          e ? (n.innerText = "Cancel", t.classList.remove("btn-success"), t.classList.add("btn-danger")) : (n.innerText = "Go!", t.classList.remove("btn-danger"), t.classList.add("btn-success"))
       }, t.a = i
   }).call(this, n(149))
 }, function(e, t, n) {
@@ -20849,7 +20845,7 @@
           document.getElementById("categories").innerHTML = e;
           var d = document.querySelectorAll("#categories .op-list");
           for (t = 0; t < d.length; t++) d[t].dispatchEvent(this.manager.oplistcreate);
-          document.querySelector("#categories a").appendChild(document.getElementById("edit-favourites"))
+          document.querySelector("#categories li").appendChild(document.getElementById("edit-favourites"))
       }, d.prototype.initialiseSplitter = function() {
           this.columnSplitter = u()(["#operations", "#recipe", "#IO"], {
               sizes: [20, 30, 50],

@@ -14,39 +14,35 @@
 .statusbar-overlay {
     background: #000000;
 }
-
+.list-block ul ul {padding-left:0px;}
 ::-webkit-scrollbar {display:none;}        
 .list-block {width:100% !important;margin:0 !important;}
 .loading-error {display:none !important;}
-ul#rec-list {min-height:400px;width: 90% !important;}
+ul#rec-list {min-height:200px;width: 90% !important;}
 #input-file {display:none;}
 #alert {display:none;}
 #banner {display:none;}
 #output-file {display:none;}
 .item-link {width:70%;}
 .list-block ul { overflow: scroll;
-    -webkit-overflow-scrolling: touch;background: #2196f3;color:#fff;}
-#operations {max-height: 140px;
+    -webkit-overflow-scrolling: touch;}
+#operations {max-height: 185px;
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
     top: 90px;
     left: 0;
     position: fixed;z-index:999;}
-<<<<<<< HEAD
-    .row .col-100  {margin-top:0px;border-top: 0px solid #ccc;}
+    .row .col-100  {margin-top:140px;border-top: 1px solid #ccc;}
     @media (min-width: 1281px) {
   
         .row .tablet-40  {margin-top:0;}
         .row .tablet-60  {margin-top:0;}
       }
 
-=======
-#recipe {border-top: 1px solid #ccc;}
->>>>>>> parent of 3ca617d... 0.5.4
 #workspace-wrapper{width:100%;}
 #rec-list li {display: inline-block;
-    width: 100%;
-   margin-left:-10%;
+    width: 80%;
+   margin-left:5%;
     background: #fff;
     padding: 5px;
     margin-top: 2px
@@ -58,7 +54,7 @@ ul#rec-list {min-height:400px;width: 90% !important;}
 #save-to-file {display:none;}
 #maximise-output {display:none;}
 .btn .btn-default {display:none;}
-.split-horizontal {border-top: 0px solid #ccc;}
+.split-horizontal {border-top: 1px solid #ccc;}
 .resizable {width:100%;min-height:200px;}
 .io-info {display:none;}
 #output-text {width:100%;min-height:200px;}
@@ -66,26 +62,28 @@ ul#rec-list {min-height:400px;width: 90% !important;}
 /*.navbar, .subnavbar, .toolbar {background:#fff;}*/
 #show-file-overlay {display:none;}
 #stale-indicator {display:none;}
-.navbar-fixed .page>.searchbar, .navbar-fixed>.searchbar, .navbar-through .page>.searchbar, .navbar-through>.searchbar {top:48px;}
 .category {display:inline-block;}
-#categories li {display:block;font-size:1.2em;padding:10px;text-align:left;margin-left:10%;}
+#categories li {font-size:1.2em;padding:10px;}
 .category-title {width: 100%; text-align: center;}
-#categories {max-height:250px;overflow:scroll;-webkit-overflow-scrolling: touch;position:absolute;top:-30px;width: 100%;
+#categories {overflow:scroll;-webkit-overflow-scrolling: touch;position:absolute;width: 100%;
     float: left;
-    margin-left: -20px;}
+    }
 #edit-favourites {display:none;}
 a.category-title {font-weight:bold;font-size:1.2em;padding:10px;}
 .page-content {background:#f4f4f4;}
-.list-block .item-content {background: #2196f3; margin-left: 16.5%;width:70%;}
-.accordion-item {text-align:center;}
+
+.accordion-item {text-align:left;}
    
 @media only screen 
 and (min-device-width : 768px) 
 and (max-device-width : 1024px)
 and (-webkit-min-device-pixel-ratio: 1)  { 
     #rec-list li {margin-left:0;}
+    ul#rec-list {min-height:380px;}
 
 }
+
+
 .collapse {display:none;}
 .collapse.in {display:block;}
 .picker-modal {background:#f4f4f4;}
@@ -94,17 +92,14 @@ and (-webkit-min-device-pixel-ratio: 1)  {
     margin: 35px 15px 10px;
     line-height: 17px;}
     @media (max-width: 360px) { body {zoom:0.65;} }
-<<<<<<< HEAD
     .donate {text-align: center;
         color: #212121;
         font-size: 1em;
         font-weight: bolder;}
         .block-strong a {display:inline-block;}
         .links-list li {display:block;}
-img.Broom.Icon {display:none;}
-select {border:0px !important;background-color:#fff;width:80%;margin-left:10%;}
-.card-footer {margin-top:20px;}
-.arg-input {width:85%;margin-left:10px;}
 
-=======
->>>>>>> parent of 3fe398a... V.0.5.5 beta
+        .center .sliding {margin-left:100px !important;}
+#add {color:#fff;right:20px;top:5px;}
+.navbar-through .page>.searchbar {display:none;}
+.toolbar  {margin-top:56px;}

@@ -24,3 +24,13 @@ myApp.onPageInit('about', function (page) {
     // Do something here for "about" page
 
 })
+
+$('#remove').click(function() {
+    return !$('#rec-list li :checked').closest('li').addClass('sortable-chosen').clone().appendTo('#categories');
+});
+$('#add').click(function() {
+   
+    return !$('#categories li :checked').closest('li').addClass('sortable-chosen').clone().appendTo('#rec-list');
+    $("li:checked").addClass("intro");
+});
+
