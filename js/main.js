@@ -19,7 +19,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-! function(e) {
+
+ ! function(e) {
   var t = {};
 
   function n(a) {
@@ -4366,7 +4367,8 @@
       })
   }(n(0))
 }, function(e, t, n) {
-  ! function(e) {
+  
+    ! function(e) {
       "use strict";
       e.defineLocale("se", {
           months: "ođđajagemánnu_guovvamánnu_njukčamánnu_cuoŋománnu_miessemánnu_geassemánnu_suoidnemánnu_borgemánnu_čakčamánnu_golggotmánnu_skábmamánnu_juovlamánnu".split("_"),
@@ -12639,7 +12641,7 @@
    * @param {App} app - The main view object for CyberChef.
    * @param {Manager} manager - The CyberChef event manager.
    */
-  i.INFO_ICON = "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAByElEQVR4XqVTzWoaYRQ9KZJmoVaS1J1QiYTIuOgqi9lEugguQhYhdGs3hTyAi0CWJTvJIks30ZBNsimUtlqkVLoQCuJsphRriyFjabWtEyf/Rv3iWcwwymTlgQuH851z5hu43wRGkEwmXwCIA4hiGAUAmUQikQbhEHwyGCWVSglVVUW73RYmyKnxjB56ncJ6NpsVxHGrI/ZLuniVb3DIqQmCHnrNkgcggNeSJPlisRgyJR2b737j/TcDsQUPwv6H5NR4BnroZcb6Z16N2PvyX6yna9Z8qp6JQ0Uf0ughmGHWBSAuyzJqrQ7eqKewY/dzE363C71e39LoWQq5wUwul4uzIBoIBHD01RgyrkZ8eDbvwUWnj623v2DHx4qB51IAzLIAXq8XP/7W0bUVVJtXWIk8wvlN364TA+/1IDMLwmWK/Hq3axmhaBdoGLeklm73ElaBYRgIzkyifHIOO4QQJKM3oJcZq6CgaVp0OTyHw9K/kQI4FiyHfdC0n2CWe5ApFosIPZ7C2tNpXpcDOehGyD/FIbd0euhlhllzFxRzC3fydbG4XRYbB9/tQ41n9m1U7l3lyp9LkfygiZeZCoecmtMqj/+Yxn7Od3v0j50qCO3zAAAAAElFTkSuQmCC", i.REMOVE_ICON = "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABwklEQVR42qRTPU8CQRB9K2CCMRJ6NTQajOUaqfxIbLCRghhjQixosLAgFNBQ3l8wsabxLxBJbCyVUBiMCVQEQkOEKBbCnefM3p4eohWXzM3uvHlv52b2hG3bmOWZw4yPn1/XQkCQ9wFxcgZZ0QLKpifpN8Z1n1L13griBBjHhYK0nMT4b+wom53ClAAFQacZJ/m8rNfrSOZy0vxJjPP6IJ2WzWYTO6mUwiwtILiJJSHUKVSWkchkZK1WQzQaxU2pVGUglkjIbreLUCiEx0qlStlFCpfPiPstYDtVKJH9ZFI2Gw1FGA6H6LTbCAaDeGu1FJl6UuYjpwTGzucokZW1NfnS66kyfT4fXns9RaZmlgNcuhZQU+jowLzuOK/HgwEW3E5ZlhLXVWKk11P3wNYNWw+HZdA0sUgx1zjGmD05nckx0ilGjBJdUq3fr7K5e8bGf43RdL7fOPSQb4lI8SLbrUfkUIuY32VTI1bJn5BqDnh4Dodt9ryPUDzyD7aquWoKQohl2i9sAbubwPkTcHkP3FHsg+yT+7sN7G0AF3Xg6sHB3onbdgWWKBDQg/BcTuVt51dQA/JrnIcyIu6rmPV3/hJgACPc0BMEYTg+AAAAAElFTkSuQmCC", i.prototype.toStubHtml = function(e) { var t = "<li class='operation'";return this.description && (t += " data-container='body' data-toggle='popover-disabled' data-placement='auto right'            data-content=\"" + this.description + "\" data-html='true' data-original-title='' title='' draggable='false' data-trigger='hover'"), t += "> <label  class='label-checkbox item-content no-fastclick'><input   class='breakpoint' type='checkbox' ><div class='item-media'><i class='icon icon-form-checkbox'></i></div><div class 'item-inner'><div class='item-title arg-title'>" + this.name, e && (t += "</div></div>" ),  t += "</li>"
+  i.INFO_ICON = "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAByElEQVR4XqVTzWoaYRQ9KZJmoVaS1J1QiYTIuOgqi9lEugguQhYhdGs3hTyAi0CWJTvJIks30ZBNsimUtlqkVLoQCuJsphRriyFjabWtEyf/Rv3iWcwwymTlgQuH851z5hu43wRGkEwmXwCIA4hiGAUAmUQikQbhEHwyGCWVSglVVUW73RYmyKnxjB56ncJ6NpsVxHGrI/ZLuniVb3DIqQmCHnrNkgcggNeSJPlisRgyJR2b737j/TcDsQUPwv6H5NR4BnroZcb6Z16N2PvyX6yna9Z8qp6JQ0Uf0ughmGHWBSAuyzJqrQ7eqKewY/dzE363C71e39LoWQq5wUwul4uzIBoIBHD01RgyrkZ8eDbvwUWnj623v2DHx4qB51IAzLIAXq8XP/7W0bUVVJtXWIk8wvlN364TA+/1IDMLwmWK/Hq3axmhaBdoGLeklm73ElaBYRgIzkyifHIOO4QQJKM3oJcZq6CgaVp0OTyHw9K/kQI4FiyHfdC0n2CWe5ApFosIPZ7C2tNpXpcDOehGyD/FIbd0euhlhllzFxRzC3fydbG4XRYbB9/tQ41n9m1U7l3lyp9LkfygiZeZCoecmtMqj/+Yxn7Od3v0j50qCO3zAAAAAElFTkSuQmCC", i.REMOVE_ICON = "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABwklEQVR42qRTPU8CQRB9K2CCMRJ6NTQajOUaqfxIbLCRghhjQixosLAgFNBQ3l8wsabxLxBJbCyVUBiMCVQEQkOEKBbCnefM3p4eohWXzM3uvHlv52b2hG3bmOWZw4yPn1/XQkCQ9wFxcgZZ0QLKpifpN8Z1n1L13griBBjHhYK0nMT4b+wom53ClAAFQacZJ/m8rNfrSOZy0vxJjPP6IJ2WzWYTO6mUwiwtILiJJSHUKVSWkchkZK1WQzQaxU2pVGUglkjIbreLUCiEx0qlStlFCpfPiPstYDtVKJH9ZFI2Gw1FGA6H6LTbCAaDeGu1FJl6UuYjpwTGzucokZW1NfnS66kyfT4fXns9RaZmlgNcuhZQU+jowLzuOK/HgwEW3E5ZlhLXVWKk11P3wNYNWw+HZdA0sUgx1zjGmD05nckx0ilGjBJdUq3fr7K5e8bGf43RdL7fOPSQb4lI8SLbrUfkUIuY32VTI1bJn5BqDnh4Dodt9ryPUDzyD7aquWoKQohl2i9sAbubwPkTcHkP3FHsg+yT+7sN7G0AF3Xg6sHB3onbdgWWKBDQg/BcTuVt51dQA/JrnIcyIu6rmPV3/hJgACPc0BMEYTg+AAAAAElFTkSuQmCC", i.prototype.toStubHtml = function(e) { var t = "<li class='operation'";return this.description && (t += " data-container='body' data-toggle='popover-disabled' data-placement='auto right'            data-content=\"" + this.description + "\" data-html='true' data-original-title='' title='' draggable='false' data-trigger='hover'"), t += "> <label  class='label-checkbox item-content no-fastclick'><input   class='breakpoint' type='checkbox' ><div class='item-media'><i class='icon icon-form-checkbox'></i></div><div class='item-inner'><div class='item-title arg-title'>" + this.name, e && (t += "</div></div>" ),  t += "</li>"
   }, i.prototype.toFullHtml = function() {
       for (var e = "<div class='arg-title'>" + this.name + "</div>", t = 0; t < this.ingList.length; t++) e += this.ingList[t].toHtml();
       return e += "<div class='recip-icons'>        <div class='breakpoint' title='Set breakpoint' break='false'></div>        <div class='disable-icon recip-icon' title='Disable operation'            disabled='false'></div>", e += "</div>        <div class='clearfix'>&nbsp;</div>"
@@ -19695,6 +19697,7 @@
   var a = function(e, t) {
       this.app = e, this.manager = t
   };
+  
   a.prototype.parseInput = function(e) {
       var t = this.app.options.useMetaKey ? e.metaKey : e.altKey;
       if (e.ctrlKey && t) {

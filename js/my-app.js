@@ -29,8 +29,7 @@ $('#remove').click(function() {
     return !$('#rec-list li :checked').closest('li').addClass('sortable-chosen').clone().appendTo('#categories');
 });
 $('#add').click(function() {
-   
-    return !$('#categories li :checked').closest('li').addClass('sortable-chosen').clone().appendTo('#rec-list');
-    $("li:checked").addClass("intro");
+   return !$('.operation  :checked').closest('li').addClass('sortable-chosen').clone().appendTo('#rec-list');
+    
 });
 

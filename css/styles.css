@@ -91,7 +91,7 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 .accordion-item a {color: #6d6d72;
     margin: 35px 15px 10px;
     line-height: 17px;}
-    @media (max-width: 360px) { body {zoom:0.65;} }
+    @media (max-width: 360px) { body {zoom:1;} }
     .donate {text-align: center;
         color: #212121;
         font-size: 1em;
