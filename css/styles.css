@@ -32,7 +32,7 @@ ul#rec-list {min-height:200px;width: 90% !important;}
     top: 90px;
     left: 0;
     position: fixed;z-index:999;}
-    .row .col-100  {margin-top:140px;border-top: 1px solid #ccc;}
+    .row .col-100  {border-top: 1px solid #ccc;}
     @media (min-width: 1281px) {
   
         .row .tablet-40  {margin-top:0;}
@@ -42,10 +42,11 @@ ul#rec-list {min-height:200px;width: 90% !important;}
 #workspace-wrapper{width:100%;}
 #rec-list li {display: inline-block;
     width: 80%;
-   margin-left:5%;
+   
     background: #fff;
     padding: 5px;
-    margin-top: 2px
+    box-shadow: 0 1px 2px rgba(0,0,0,.3);
+margin: 10px;
 }
 #save {display:none;}
 #load {display:none;}
@@ -57,7 +58,6 @@ ul#rec-list {min-height:200px;width: 90% !important;}
 .split-horizontal {border-top: 1px solid #ccc;}
 .resizable {width:100%;min-height:200px;}
 .io-info {display:none;}
-<<<<<<< HEAD
 #output-text {width:100%;min-height:200px;}
 .navbar .left {display:none;}
 /*.navbar, .subnavbar, .toolbar {background:#fff;}*/
@@ -72,21 +72,19 @@ ul#rec-list {min-height:200px;width: 90% !important;}
 #edit-favourites {display:none;}
 a.category-title {font-weight:bold;font-size:1.2em;padding:10px;}
 .page-content {background:#f4f4f4;}
-<<<<<<< HEAD
 
 .accordion-item {text-align:left;}
-=======
-.list-block .item-content {background: #2196f3; margin-left: 16.5%;width:70%;}
-.accordion-item {text-align:center;}
->>>>>>> parent of 3fe398a... V.0.5.5 beta
    
 @media only screen 
 and (min-device-width : 768px) 
 and (max-device-width : 1024px)
 and (-webkit-min-device-pixel-ratio: 1)  { 
     #rec-list li {margin-left:0;}
+    ul#rec-list {min-height:380px;}
 
 }
+
+
 .collapse {display:none;}
 .collapse.in {display:block;}
 .picker-modal {background:#f4f4f4;}
@@ -94,7 +92,6 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 .accordion-item a {color: #6d6d72;
     margin: 35px 15px 10px;
     line-height: 17px;}
-<<<<<<< HEAD
     @media (max-width: 360px) { body {zoom:1;} }
     .donate {text-align: center;
         color: #212121;
@@ -107,9 +104,10 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 #add {color:#fff;right:20px;top:5px;}
 .navbar-through .page>.searchbar {display:none;}
 .toolbar  {margin-top:56px;}
-=======
-    @media (max-width: 360px) { body {zoom:0.65;} }
->>>>>>> parent of 3fe398a... V.0.5.5 beta
-=======
-#output-text {width:100%;min-height:200px;}
->>>>>>> parent of 20f39f9... V.0.0.2
+.item-title .addme:active { 
+    background-color: yellow;
+}
+.button.button-fill.color-white {
+    
+    color: rgba(0,0,0,.54);
+}

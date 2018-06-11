@@ -1,15 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<<<<<<< HEAD
-<widget id="com.codex.insomnia" version="0.5.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Codex: by Insomnia</name>
+<widget id="com.cryptolog.insomnia" version="0.6.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Insomnia Coder</name>
     <description>
         Encode and Decode hidden messages with our superior app. It is easy to use and you can encode and decode layered message
-=======
-<widget id="com.cryptolog.insomnia" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Insomnia</name>
-    <description>
-       Decoding and encoding app that will blow your mind.
->>>>>>> parent of 20f39f9... V.0.0.2
     </description>
     <author email="insomniamail@protonmail.com" href="http://ins0mnia.tk">
        Insomnia
@@ -17,7 +10,7 @@
     <widget>
         <icon src="images/icon.png" />
         </widget>
-    <content src="index.html" />
+    <content src="index.html/" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -34,17 +27,11 @@
         <allow-intent href="itms-apps:*" />
         <preference name="BackupWebStorage" value="none" />
     </platform>
-<<<<<<< HEAD
 
-=======
->>>>>>> parent of 20f39f9... V.0.0.2
     <preference name="DisallowOverscroll" value="true" />
     <plugin name="cordova-plugin-whitelist" spec="~1.2.0" />
     <plugin name="cordova-plugin-console" spec="~1.0.1" />
     <plugin name="cordova-plugin-statusbar" spec="~1.0.1" />
-<<<<<<< HEAD
     <plugin name="cordova-plugin-inappbrowser" spec="~3.0.0" />
  
-=======
->>>>>>> parent of 20f39f9... V.0.0.2
 </widget>
