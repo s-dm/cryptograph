@@ -18,11 +18,7 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-        <!-- Internet Permissions -->
-        <uses-permission android:name="android.permission.INTERNET" />
-
-        <!-- Network State Permissions -->
-        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+      
     <platform name="android">
         <preference name="android-minSdkVersion" value="14" />
         <allow-intent href="market:*" />
