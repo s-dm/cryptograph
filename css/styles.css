@@ -57,6 +57,7 @@ ul#rec-list {min-height:200px;width: 90% !important;}
 .split-horizontal {border-top: 1px solid #ccc;}
 .resizable {width:100%;min-height:200px;}
 .io-info {display:none;}
+<<<<<<< HEAD
 #output-text {width:100%;min-height:200px;}
 .navbar .left {display:none;}
 /*.navbar, .subnavbar, .toolbar {background:#fff;}*/
@@ -109,3 +110,6 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 =======
     @media (max-width: 360px) { body {zoom:0.65;} }
 >>>>>>> parent of 3fe398a... V.0.5.5 beta
+=======
+#output-text {width:100%;min-height:200px;}
+>>>>>>> parent of 20f39f9... V.0.0.2

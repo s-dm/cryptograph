@@ -16,15 +16,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
-    <link rel="apple-touch-icon-precomposed" href="images/icon.png"/>
-    <link rel="apple-touch-icon" href="images/icon.png"/>
-    <link rel="apple-touch-startup-image" href="images/splash.png" />
 
     <!-- Your app title -->
+<<<<<<< HEAD
     <title>Codex: by Insomnia</title>
+=======
+    <title>My App</title>
+>>>>>>> parent of 20f39f9... V.0.0.2
 
     <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
         http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
@@ -152,7 +152,9 @@
     <div class="panel-overlay"></div>
     <!-- Left panel with reveal effect-->
     <div class="panel panel-left panel-reveal">
-           
+        <div class="content-block">
+            <p>Left panel content goes here</p>
+        </div>
     </div>
 
     <!-- Views -->
@@ -162,7 +164,6 @@
             <!-- Top Navbar-->
             <div class="navbar">
                 <div class="navbar-inner">
-                      
                     <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
                     <div class="center sliding">Codex: by Insomnia</div>
                     <div class="right">
@@ -170,7 +171,7 @@
                           Right link contains only icon - additional "icon-only" class
                           Additional "open-panel" class tells app to open panel when we click on this link
                         -->
-                   
+                        <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
                     </div>
                 </div>
             </div>
@@ -179,7 +180,7 @@
                 <!-- Page, "data-page" contains page name -->
                 <div data-page="index" class="page">
                     <!-- Scrollable page content -->
-                    <form class="searchbar navbar">
+                    <form class="searchbar">
                             <div class="searchbar-input">
                                 <input type="search" class="form-control " id="search" placeholder="Search recipe">
                                 <a href="#" class="searchbar-clear"></a>
@@ -189,9 +190,12 @@
                         
                         <!-- Search Bar overlay-->
                         <div class="searchbar-overlay"></div>
+<<<<<<< HEAD
                     <div class="page-content hide-toolbar-on-scroll">
+=======
+                    <div class="page-content">
+>>>>>>> parent of 20f39f9... V.0.0.2
                         <div class="content-block">
-                            
                                 <span id="edit-favourites" class="btn btn-default btn-sm"><img aria-hidden="true" src="images/favourite-16x16.png" alt="Star Icon"> Edit</span>
    
                                 <div id="loader-wrapper">
@@ -395,7 +399,80 @@
                                             </div>
                                         </div>
                                     </div>
-                                   
+                                    <div class="modal" id="support-modal" tabindex="-1" role="dialog">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header"><img aria-hidden="true" class="pull-right" src="images/help-22x22.png" alt="Question Mark Icon">
+                                                    <h4 class="modal-title">CyberChef - The Cyber Swiss Army Knife</h4>
+                                                </div>
+                                                <div class="modal-body"><img aria-hidden="true" class="about-img-left" src="images/cyberchef-128x128.png" alt="CyberChef Logo">
+                                                    <p class="subtext">Version 7.11.1<br>Compile time: 10/05/2018 15:37:53 UTC</p>
+                                                    <p>&copy; Crown Copyright 2016.</p>
+                                                    <p>Released under the Apache Licence, Version 2.0.</p>
+                                                    <p><a href="https://gitter.im/gchq/CyberChef"><img src="images/gitter-badge.svg"></a></p><br><br>
+                                                    <div>
+                                                        <ul class="nav nav-tabs" role="tablist">
+                                                            <li role="presentation" class="active"><a href="index.html#faqs" aria-controls="profile" role="tab" data-toggle="tab"><img aria-hidden="true" src="images/help-16x16.png" alt="Question Mark Icon"> FAQs</a></li>
+                                                            <li role="presentation"><a href="index.html#report-bug" aria-controls="messages" role="tab" data-toggle="tab"><img aria-hidden="true" src="images/bug-16x16.png" alt="Bug Icon"> Report a bug</a></li>
+                                                            <li role="presentation"><a href="index.html#about" aria-controls="messages" role="tab" data-toggle="tab"><img aria-hidden="true" src="images/speech-16x16.png" alt="Speech Balloon Icon"> About</a></li>
+                                                            <li role="presentation"><a href="index.html#keybindings" aria-controls="messages" role="tab" data-toggle="tab"><img aria-hidden="true" src="images/code-16x16.png" alt="List Icon"> Keybindings</a></li>
+                                                        </ul>
+                                                        <div class="tab-content">
+                                                            <div role="tabpanel" class="tab-pane active" id="faqs"><br>
+                                                                <blockquote><a data-toggle="collapse" data-target="#faq-examples">What sort of things can I do with CyberChef?</a></blockquote>
+                                                                <div class="collapse" id="faq-examples">
+                                                                    <p>There are around 200 operations in CyberChef allowing you to carry out simple and complex tasks easily. Here are some examples:</p>
+                                                                    <ul>
+                                                                        <li><a href="index.html#recipe=From_Base64('A-Za-z0-9+/=',true)&input=VTI4Z2JHOXVaeUJoYm1RZ2RHaGhibXR6SUdadmNpQmhiR3dnZEdobElHWnBjMmd1">Decode a Base64-encoded string</a></li>
+                                                                        <li><a href="index.html#recipe=Translate_DateTime_Format('Standard%20date%20and%20time','DD/MM/YYYY%20HH:mm:ss','UTC','dddd%20Do%20MMMM%20YYYY%20HH:mm:ss%20Z%20z','Australia/Queensland')&input=MTUvMDYvMjAxNSAyMDo0NTowMA">Convert a date and time to a different time zone</a></li>
+                                                                        <li><a href="index.html#recipe=Parse_IPv6_address()&input=MjAwMTowMDAwOjQxMzY6ZTM3ODo4MDAwOjYzYmY6M2ZmZjpmZGQy">Parse a Teredo IPv6 address</a></li>
+                                                                        <li><a href="index.html#recipe=From_Hexdump()Gunzip()&input=MDAwMDAwMDAgIDFmIDhiIDA4IDAwIDEyIGJjIGYzIDU3IDAwIGZmIDBkIGM3IGMxIDA5IDAwIDIwICB8Li4uLi6881cu/y7HwS4uIHwKMDAwMDAwMTAgIDA4IDA1IGQwIDU1IGZlIDA0IDJkIGQzIDA0IDFmIGNhIDhjIDQ0IDIxIDViIGZmICB8Li7QVf4uLdMuLsouRCFb/3wKMDAwMDAwMjAgIDYwIGM3IGQ3IDAzIDE2IGJlIDQwIDFmIDc4IDRhIDNmIDA5IDg5IDBiIDlhIDdkICB8YMfXLi6+QC54Sj8uLi4ufXwKMDAwMDAwMzAgIDRlIGM4IDRlIDZkIDA1IDFlIDAxIDhiIDRjIDI0IDAwIDAwIDAwICAgICAgICAgICB8TshObS4uLi5MJC4uLnw">Convert data from a hexdump, then decompress</a></li>
+                                                                        <li><a href="index.html#recipe=RC4(%7B'option':'UTF8','string':'secret'%7D,'Hex','Hex')Disassemble_x86('64','Full%20x86%20architecture',16,0,true,true)&input=MjFkZGQyNTQwMTYwZWU2NWZlMDc3NzEwM2YyYTM5ZmJlNWJjYjZhYTBhYWJkNDE0ZjkwYzZjYWY1MzEyNzU0YWY3NzRiNzZiM2JiY2QxOTNjYjNkZGZkYmM1YTI2NTMzYTY4NmI1OWI4ZmVkNGQzODBkNDc0NDIwMWFlYzIwNDA1MDcxMzhlMmZlMmIzOTUwNDQ2ZGIzMWQyYmM2MjliZTRkM2YyZWIwMDQzYzI5M2Q3YTVkMjk2MmMwMGZlNmRhMzAwNzJkOGM1YTZiNGZlN2Q4NTlhMDQwZWVhZjI5OTczMzYzMDJmNWEwZWMxOQ">Decrypt and disassemble shellcode</a></li>
+                                                                        <li><a href="index.html#recipe=Fork('%5C%5Cn','%5C%5Cn',false)From_UNIX_Timestamp('Seconds%20(s)')&input=OTc4MzQ2ODAwCjEwMTI2NTEyMDAKMTA0NjY5NjQwMAoxMDgxMDg3MjAwCjExMTUzMDUyMDAKMTE0OTYwOTYwMA">Display multiple timestamps as full dates</a></li>
+                                                                        <li><a href="index.html#recipe=Fork('%5C%5Cn','%5C%5Cn',false)Conditional_Jump('1',false,'base64',10)To_Hex('Space')Return()Label('base64')To_Base64('A-Za-z0-9+/=')&input=U29tZSBkYXRhIHdpdGggYSAxIGluIGl0ClNvbWUgZGF0YSB3aXRoIGEgMiBpbiBpdA">Carry out different operations on data of different types</a></li>
+                                                                        <li><a href="index.html#recipe=Register('key=(%5B%5C%5Cda-f%5D*)',true,false)Find_/_Replace(%7B'option':'Regex','string':'.*data=(.*)'%7D,'$1',true,false,true)RC4(%7B'option':'Hex','string':'$R0'%7D,'Hex','Latin1')&input=aHR0cDovL21hbHdhcmV6LmJpei9iZWFjb24ucGhwP2tleT0wZTkzMmE1YyZkYXRhPThkYjdkNWViZTM4NjYzYTU0ZWNiYjMzNGUzZGIxMQ">Use parts of the input as arguments to operations</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                                <blockquote><a data-toggle="collapse" data-target="#faq-load-files">Can I load input directly from files?</a></blockquote>
+                                                                <div class="collapse" id="faq-load-files">
+                                                                    <p>Yes! Just drag your file over the input box and drop it.</p>
+                                                                    <p>CyberChef can handle files up to around 500MB (depending on your browser), however some of the operations may take a very long time to run over this much data.</p>
+                                                                    <p>If the output is larger than a certain threshold (default 1MiB), it will be presented to you as a file available for download. Slices of the file can be viewed in the output if you need to inspect them.</p>
+                                                                </div>
+                                                                <blockquote><a data-toggle="collapse" data-target="#faq-fork">How do I run operation X over multiple inputs at once?</a></blockquote>
+                                                                <div class="collapse" id="faq-fork">
+                                                                    <p>Maybe you have 10 timestamps that you want to parse or 16 encoded strings that all have the same key.</p>
+                                                                    <p>The 'Fork' operation (found in the 'Flow control' category) splits up the input line by line and runs all subsequent operations on each line separately. Each output is then displayed on a separate line. These delimiters can be changed, so if your inputs are separated by commas, you can change the split delimiter to a comma instead.</p>
+                                                                    <p><a href="index.html#recipe=Fork('%5C%5Cn','%5C%5Cn',false)From_UNIX_Timestamp('Seconds%20(s)')&input=OTc4MzQ2ODAwCjEwMTI2NTEyMDAKMTA0NjY5NjQwMAoxMDgxMDg3MjAwCjExMTUzMDUyMDAKMTE0OTYwOTYwMA">Click here</a> for an example.</p>
+                                                                </div>
+                                                            </div>
+                                                            <div role="tabpanel" class="tab-pane" id="report-bug"><br>
+                                                                <p>If you find a bug in CyberChef, please raise an issue in our GitHub repository explaining it in as much detail as possible. Copy and include the following information if relevant.</p><br>
+                                                                <pre id="report-bug-info"></pre><br><a class="btn btn-primary" href="https://github.com/gchq/CyberChef/issues/new" role="button">Raise issue on GitHub</a></div>
+                                                            <div role="tabpanel" class="tab-pane" id="about" style="padding:20px">
+                                                                <h5><strong>What</strong></h5>
+                                                                <p>A simple, intuitive web app for analysing and decoding data without having to deal with complex tools or programming languages. CyberChef encourages both technical and non-technical people to explore data formats, encryption and compression.</p><br>
+                                                                <h5><strong>Why</strong></h5>
+                                                                <p>Digital data comes in all shapes, sizes and formats in the modern world – CyberChef helps to make sense of this data all on one easy-to-use platform.</p><br>
+                                                                <h5><strong>How</strong></h5>
+                                                                <p>The interface is designed with simplicity at its heart. Complex techniques are now as trivial as drag-and-drop. Simple functions can be combined to build up a "recipe", potentially resulting in complex analysis, which can be shared with other users and used with their input.</p>
+                                                                <p>For those comfortable writing code, CyberChef is a quick and efficient way to prototype solutions to a problem which can then be scripted once proven to work.</p><br>
+                                                                <h5><strong>Who</strong></h5>
+                                                                <p>It is expected that CyberChef will be useful for cybersecurity and antivirus companies. It should also appeal to the academic world and any individuals or companies involved in the analysis of digital data, be that software developers, analysts, mathematicians or casual puzzle solvers.</p><br>
+                                                                <h5><strong>Aim</strong></h5>
+                                                                <p>It is hoped that by releasing CyberChef through <a href="https://github.com/gchq/CyberChef">GitHub</a>, contributions can be added which can be rolled out into future versions of the tool.</p><br><br>
+                                                                <p>There are around 200 useful operations in CyberChef for anyone working on anything vaguely Internet-related, whether you just want to convert a timestamp to a different format, decompress gzipped data, create a SHA3 hash, or parse an X.509 certificate to find out who issued it.</p>
+                                                                <p>It’s the Cyber Swiss Army Knife.</p>
+                                                            </div>
+                                                            <div role="tabpanel" class="tab-pane" id="keybindings" style="padding:20px">
+                                                                <table class="table table-condensed table-bordered table-hover" id="keybList"></table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Close</button></div><a href="https://github.com/gchq/CyberChef"><img aria-hidden="true" style="position:absolute;top:0;right:0;border:0" src="images/fork_me.png" alt="Fork me on GitHub"></a></div>
+                                        </div>
+                                    </div>
                                     <div class="modal" id="confirm-modal" tabindex="-1" role="dialog">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content">
@@ -411,6 +488,7 @@
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
             <div class="toolbar tabbar" style="z-index:9998;"id="operational-controls">
                     <div class="toolbar-inner" id="bake-group">
                         <a href="#" data-popup=".popup-about"  class="open-popup link ">
@@ -568,6 +646,17 @@
     <script type="text/javascript" src="js/my-app.js"></script>
   
     
+=======
+            <!-- Bottom Toolbar-->
+            
+        </div>
+    </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>>
+>>>>>>> parent of 20f39f9... V.0.0.2
 </body>
 
 </html>
