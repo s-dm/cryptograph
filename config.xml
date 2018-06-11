@@ -10,7 +10,7 @@
     <widget>
         <icon src="images/icon.png" />
         </widget>
-    <content src="index.html/" />
+    <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
