@@ -45,7 +45,10 @@
 
   gtag('config', 'UA-119897533-1');
 </script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"></link>
 
+  
+    
     <!--<link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
     <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">-->
     <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/framework7/1.4.2/css/framework7.material.min.css" />
@@ -434,12 +437,14 @@
                                    
                                            
                                         
-                      <a href="http://ins0mnia.tk/blog/" class="link  external">
-                            Blog
-                        </a>
+                     
                         <a href="#" data-popup=".popup-codex"  class="open-popup link ">
                             Codex
                             </a>
+                            <a href="#" data-popup=".popup-chat"  class="open-popup link ">
+                                Chat
+                                </a>
+                            
                             
                     </div>
                 </div>
@@ -518,6 +523,85 @@
                 </ul></div>
                </div>
                 </div></div></div>
+                <div class="popup popup-chat page">
+                        <div class="view navbar-fixed" data-page="smart-select-checkbox-1528273673517"><div class="pages"> 
+                                <div data-page="smart-select-checkbox-1528273673517" data-select-name="codex" class="page smart-select-page  ">
+                                <div class="navbar ">
+                                <div class="navbar-inner"
+                                ><div class="left" style="display:block;">
+                                <a href="#" class="link close-popup">
+                                <i class="icon icon-back"></i>
+                                
+                                </a>
+                                </div>
+                                <div class="right sliding" ><p style="margin-right:20px;">Chat</p><!--<a href="#" class="button button-small button-raised color-blue button-fill" id="add">Add to recipe</a>-->
+                               </div>
+                                </div>
+                                </div>
+                    
+                        
+                        
+                            <div class="chat page-content messages-content">
+                               
+                                <div class="chat-history page-content messages-content">
+                                        <div class="messages">
+                                    <ul></ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="toolbar messagebar" style="margin-top:0px !important;">
+                                        <div class="toolbar-inner">
+                                          <div class="messagebar-area">
+                                                <form id="sendMessage" class="chat-message clearfix">
+                                                        <input type="text" name="message-to-send" id="message-to-send" placeholder="Type your message" rows="1"></input>
+                                                        <input type="submit" class=" link send-link" value="Send"></input>
+                                                    </form>
+                        </div>
+                      </div>
+                                <!-- end chat-message -->
+                            </div>
+                            <!-- end chat -->
+                        </div>
+                        <!-- end container -->
+                        
+                        <script id="message-template" type="text/x-handlebars-template">
+                            <div class="message message-sent">
+                                    <div class="message-content">
+                                            <div class="message-name">{{user.first}}</div>
+                                            <div class="message-header">{{time}}</div>
+                                      <div class="message-bubble">
+                                        <div class="message-text">{{{messageOutput}}}</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                            
+                        </script>
+                        <script id="message-response-template" type="text/x-handlebars-template">
+                            <div class="message message-received">
+                                
+                                    <div class="message-content">
+                                            <div class="message-name">{{user.first}}</div>
+                                            <div class="message-header">{{time}}</div>
+                                      <div class="message-bubble">
+                                        <div class="message-text">{{{messageOutput}}}</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                        </script>
+                        <script id="person-template" type="text/x-handlebars-template">
+                            {{#if state.full}}
+                            <li class="clearfix" id="{{uuid}}">
+                                <img src="{{state.avatar}}" alt="avatar" />
+                                <div class="about">
+                                    <div class="name">{{state.full}}</div>
+                                    <div class="status">
+                                        <i class="fa fa-circle online"></i> online
+                                    </div>
+                                </div>
+                            </li>
+                            {{/if}}
+                        </script>  
+                    </div></div>
           <div class="picker-modal picker-1">
             <div class="toolbar">
               <div class="toolbar-inner">
@@ -567,7 +651,8 @@
       </div>
       <div id="keybList"></div>
  
-</div>         
+</div> 
+         
   
 
     <script type="text/javascript" src="cordova.js"></script>
@@ -575,7 +660,13 @@
     <script type="text/javascript" src="js/main.js"></script>
     
     <script type="text/javascript" src="js/my-app.js"></script>
-  
+    <script src='js/handlebars.min.js'></script>
+    <script src='js/list.min.js'></script>
+    <script src='js/chat-engine.js'></script>
+    <script src='js/generateperson.js'></script>
+    <script src="js/chat-engine-markdown.js"></script>
+    
+    <script  src="js/index.js"></script>
     
 </body>
 
