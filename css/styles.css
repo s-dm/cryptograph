@@ -116,14 +116,14 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 .page .smart-select-page .toolbar{position:fixed;}
 .navbar-fixed .page-content {padding-bottom:20px;}
 .page .smart-select-page .toolbar {margin-top:0px !important;}
-.chat-message .clearfix {width:100%;}
-.messagebar-area{width:100%;}
+.chat-message .clearfix {width:100vw;}
+.messagebar-area{width:100vw;}
 #message-to-send {height: 40px;
     color: #333;
     font-size: 16px;
     border:0px; 
     line-height: 22px;
-    width: 80%;
+    width: 75%;
   
 #sendMessage {width:100%}
     .message-send-button {-webkit-justify-content: center;
@@ -135,7 +135,7 @@ and (-webkit-min-device-pixel-ratio: 1)  {
         height: 48px;
         background: #fff;
         border: 0px;}
-        .send-link {background: #fff;
+      input.send-link {background: #fff;
     border: 0px;
-    width: 18%;
+    width: 18vw;
     height: 40px;}
