@@ -92,7 +92,7 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 .accordion-item a {color: #6d6d72;
     margin: 35px 15px 10px;
     line-height: 17px;}
-    @media (max-width: 360px) { body {zoom:1;} }
+
     .donate {text-align: center;
         color: #212121;
         font-size: 1em;
@@ -118,12 +118,7 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 .page .smart-select-page .toolbar {margin-top:0px !important;}
 .chat-message .clearfix {width:100vw;}
 .messagebar-area{width:100vw;}
-#message-to-send {height: 40px;
-    color: #333;
-    font-size: 16px;
-    border:0px; 
-    line-height: 22px;
-    width: 75%;
+
   
 #sendMessage {width:100%}
     .message-send-button {-webkit-justify-content: center;
@@ -135,7 +130,13 @@ and (-webkit-min-device-pixel-ratio: 1)  {
         height: 48px;
         background: #fff;
         border: 0px;}
-      input.send-link {background: #fff;
-    border: 0px;
-    width: 18vw;
-    height: 40px;}
+ #message-to-send {height: 40px;
+            color: #333;
+            font-size: 16px;
+            border:0px; 
+            line-height: 22px;
+            width: 75%;
+        }
+        @media (max-width: 360px) { body {zoom:0.8;} 
+        .page .smart-select-page {zoom:0.8;}
+    }
